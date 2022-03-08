@@ -1,0 +1,24 @@
+﻿<UserControl x:Name="IntegerControlInternal"
+             x:Class="MonkeyMotionControl.UI.IntegerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Padding="0"
+             IsHitTestVisible="True"
+             VerticalContentAlignment="Center"
+             HorizontalContentAlignment="Center"
+             MouseWheel="UserControl_MouseWheel"
+             d:DesignWidth="24" d:DesignHeight="18" >
+    <TextBox Name="ValueBox" 
+             Margin="0" Padding="0" Text="000"
+             Background="Transparent" BorderThickness="0"
+             PreviewKeyDown="ValueBox_PreviewKeyDown"
+             TextChanged="ValueBox_TextChanged"
+             HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+             FontFamily="{Binding Path=FontFamily, ElementName=IntegerControlInternal}"
+             Foreground="{Binding Path=Foreground, ElementName=IntegerControlInternal}"
+             >
+    </TextBox>
+</UserControl>

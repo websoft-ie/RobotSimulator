@@ -1,0 +1,14 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  DllInterface.cpp
+d:\work\manuelwork\monkeymotioncontrol_rcp_sdk\rcp_vs2017\rcp_dll\dllinterface.cpp(118): warning C4474: 'printf' : too many arguments passed for format string
+  d:\work\manuelwork\monkeymotioncontrol_rcp_sdk\rcp_vs2017\rcp_dll\dllinterface.cpp(118): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+d:\work\manuelwork\monkeymotioncontrol_rcp_sdk\rcp_vs2017\rcp_dll\dllinterface.cpp(128): warning C4474: 'printf' : too many arguments passed for format string
+  d:\work\manuelwork\monkeymotioncontrol_rcp_sdk\rcp_vs2017\rcp_dll\dllinterface.cpp(128): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+d:\work\manuelwork\monkeymotioncontrol_rcp_sdk\rcp_vs2017\rcp_dll\dllinterface.cpp(134): warning C4474: 'printf' : too many arguments passed for format string
+  d:\work\manuelwork\monkeymotioncontrol_rcp_sdk\rcp_vs2017\rcp_dll\dllinterface.cpp(134): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+d:\work\manuelwork\monkeymotioncontrol_rcp_sdk\rcp_vs2017\rcp_dll\dllinterface.cpp(140): warning C4474: 'printf' : too many arguments passed for format string
+  d:\work\manuelwork\monkeymotioncontrol_rcp_sdk\rcp_vs2017\rcp_dll\dllinterface.cpp(140): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+d:\work\manuelwork\monkeymotioncontrol_rcp_sdk\rcp_vs2017\rcp_dll\dllinterface.cpp(152): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+d:\work\manuelwork\monkeymotioncontrol_rcp_sdk\rcp_vs2017\rcp_dll\dllinterface.cpp(351): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+     Creating library ..\rcp_wpf\bin\Debug\rcp_dll.lib and object ..\rcp_wpf\bin\Debug\rcp_dll.exp
+  rcp_dll.vcxproj -> D:\Work\ManuelWork\MonkeyMotionControl_RCP_SDK\RCP_VS2017\rcp_dll\..\rcp_wpf\bin\Debug\rcp_dll.dll

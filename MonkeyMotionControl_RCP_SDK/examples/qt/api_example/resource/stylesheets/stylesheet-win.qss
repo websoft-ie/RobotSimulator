@@ -1,0 +1,29 @@
+QPushButton#record {
+        font-weight: bold;
+        font-size: 18px;
+        min-height: 40px;
+        max-height: 40px;
+        border-radius: 15px;
+        margin: 3px;
+}
+
+QPushButton#record:focus {
+        background-color: transparent;
+    color: #000000;
+    border-color: #000000;
+}
+
+QLineEdit {
+    background-color: #000000;
+    color: #F0F0F0;
+}
+
+QComboBox {
+    background-color: #000000;
+    color: #F0F0F0;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #000000;
+    color: #F0F0F0;
+}

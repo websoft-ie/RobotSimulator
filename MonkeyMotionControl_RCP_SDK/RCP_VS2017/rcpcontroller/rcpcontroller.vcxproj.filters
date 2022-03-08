@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="clist">
+      <UniqueIdentifier>{5c53c9e7-8752-4808-b4f1-893a4a137f49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rcp_api">
+      <UniqueIdentifier>{467c6ca6-678e-4f8d-9f3e-603c8885bb12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DllMain">
+      <UniqueIdentifier>{1de15ab5-8d3a-4a08-af0a-e9bb70c79291}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="combobox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="combodelegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="connection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="listdata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parametergroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="slider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="slideredit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="strtok_r.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="clist\c_list.c">
+      <Filter>clist</Filter>
+    </ClCompile>
+    <ClCompile Include="clist\clist.cpp">
+      <Filter>clist</Filter>
+    </ClCompile>
+    <ClCompile Include="rcp_api\rcp_api.c">
+      <Filter>rcp_api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\listwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\logger.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\qtutil.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DllInterface.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="combobox.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="combodelegate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="connection.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="controller.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="listdata.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="mainwindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="parametergroup.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="slider.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="slideredit.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\common\listwidget.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="debug\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="release\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\resource\images\check-focus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\resource\images\check.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\resource\images\down-arrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="..\resource\resources.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="..\resource\stylesheets\stylesheet-base-mac.qss">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\resource\stylesheets\stylesheet-base-win.qss">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\resource\stylesheets\stylesheet-mac.qss">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\resource\stylesheets\stylesheet-win.qss">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\resource\redlink\resources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="clist\c_list.h">
+      <Filter>clist</Filter>
+    </ClInclude>
+    <ClInclude Include="clist\clist.h">
+      <Filter>clist</Filter>
+    </ClInclude>
+    <ClInclude Include="rcp_api\rcp_api.h">
+      <Filter>rcp_api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\logger.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\qtutil.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

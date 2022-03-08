@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="MonkeyMotionControl.UI.TableCommands"
+             x:Name="TableCommandsInternal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:UI="clr-namespace:MonkeyMotionControl.UI"
+             mc:Ignorable="d"
+             FontFamily="Calibri"
+             >
+    <StackPanel Orientation="Vertical">
+        <StackPanel x:Name="stackpanel_function_buttons" Orientation="Horizontal" Margin="3,3,3,3">
+            <Button x:Name="Btn_GotoSelPoint" Content="Go Sel" Height="20" Width="40" Click="Btn_GotoSelPoint_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontWeight="Bold"/>
+            <Button x:Name="Btn_Edit" Content="Edit" Height="20" Width="40" Click="Btn_Edit_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Margin="0,0,20,0" FontWeight="Bold"/>
+            <Button x:Name="Btn_SetStart" Content="Set Start" Height="20" Width="50" Click="Btn_Set_Start_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontWeight="Bold"/>
+            <Button x:Name="Btn_AddLinear" Content="+L" Height="20" Width="30" Click="Btn_Add_Linear_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontWeight="Bold"/>
+            <Button x:Name="Btn_AddCircular" Content="+C" Height="20" Width="30" Click="Btn_Add_Circular_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontWeight="Bold"/>
+            <Button x:Name="Btn_DeleteLast" Content="-Last" Height="20" Width="40" Click="Btn_DeleteLast_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Margin="20,0" FontWeight="Bold"/>
+            <Button x:Name="Btn_Clear" Content="Clear" Height="20" Width="40" Click="Btn_ClearTable_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Margin="0,0,0,0" FontWeight="Bold"/>
+            <Button x:Name="Btn_OpenFile" Click="Btn_OpenFile_Click" Style="{StaticResource ButtonSimulatorOpenFile}" Width="24" Height="24" />
+            <Button x:Name="Btn_SaveFile" Click="Btn_SaveFile_Click" Style="{StaticResource ButtonSimulatorSaveFile}" Width="24" Height="24" />
+        </StackPanel>
+        <StackPanel x:Name="stackpanel_function_navigation" Orientation="Horizontal" Margin="3,3,3,3">
+            <Button x:Name="Btn_NavStart" Content="|&lt;" Height="20" Width="40" Click="Btn_NavStart_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" ToolTip="First" FontWeight="Bold" />
+            <Button x:Name="Btn_NavPrev" Content="&lt;" Height="20" Width="40" Click="Btn_NavPrev_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" ToolTip="Previous" FontWeight="Bold" />
+            <TextBox x:Name="Tb_NavCurPoint" Text="-" Width="100" Height="16" TextAlignment="Center" FontSize="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="10,0" />
+            <Button x:Name="Btn_NavNext" Content="&gt;" Height="20" Width="40" Click="Btn_NavNext_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" ToolTip="Next" FontWeight="Bold" />
+            <Button x:Name="Btn_NavEnd" Content="&gt;|" Height="20" Width="40" Click="Btn_NavEnd_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" ToolTip="Last" FontWeight="Bold" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Background="#FF4D4D4D">
+            <DataGrid x:Name="DataGrid_SequenceCommands" ItemsSource="{Binding}" Margin="0,0" SelectionMode="Single" Height="290" Width="396" BorderBrush="{x:Null}" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

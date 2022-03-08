@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/homeLinearLayout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" 
+	android:orientation="vertical"
+	android:gravity="center_horizontal"
+	android:paddingBottom="@dimen/activity_vertical_margin"
+	android:paddingLeft="@dimen/activity_horizontal_margin"
+	android:paddingRight="@dimen/activity_horizontal_margin"
+	android:paddingTop="@dimen/activity_vertical_margin"
+	android:background="#333333" >
+
+    <LinearLayout
+        android:id="@+id/spinnerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" 
+        android:orientation="vertical"
+        android:gravity="center_vertical" >
+        
+		<TextView 
+		    android:id="@+id/spinnerLabel"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/spinner_param_text"
+	        android:textSize="@dimen/label_size" />
+	    
+	    <com.red.redcontrol.CustomSpinner
+	        android:id="@+id/rcpParamSpinner"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/generic_field_2_layout_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" 
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:focusable="true" android:focusableInTouchMode="true" >
+	    
+		<TextView 
+		    android:id="@+id/generic_field_2_label_text_view_main"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/slate_label"
+	        android:textSize="@dimen/label_size" />
+        
+		<EditText 
+		    android:id="@+id/generic_field_2_edit_text_main"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:hint="@string/slate_scene_hint"
+	        android:inputType="textNoSuggestions"
+	        android:lines="1"
+	        android:imeOptions="actionDone"
+	        android:linksClickable="false"
+	        android:selectAllOnFocus="true"
+	        style="@style/AutoCompleteTextViewREDTheme" />
+	    
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/sliderLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" 
+        android:orientation="vertical"
+        android:gravity="center_vertical" >
+
+        <TextView
+	        android:id="@+id/sliderLabelTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/slider_param_text"
+	        android:textSize="@dimen/label_size" />
+
+	    <LinearLayout
+	        android:id="@+id/sliderLayout2"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" 
+	        android:orientation="horizontal"
+	        android:focusable="true" android:focusableInTouchMode="true" >
+	        
+		    <SeekBar
+		        android:id="@+id/rcpParamSlider"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        style="@style/SeekBarREDTheme"
+		        android:layout_weight="@dimen/seek_bar_weight" />
+		    
+		    <EditText
+		        android:id="@+id/sliderValueEditText"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="@dimen/seek_bar_text_box_weight"
+		        android:inputType="numberDecimal"
+		        android:imeOptions="actionDone"
+		        android:linksClickable="false"
+		        android:selectAllOnFocus="true"
+		        style="@style/AutoCompleteTextViewREDTheme"
+		        android:textColorLink="@android:color/primary_text_light" />
+		    
+	    </LinearLayout>
+
+    </LinearLayout>    
+
+	<com.red.redcontrol.HistogramView
+		android:id="@+id/histogramView"
+		android:layout_width="@dimen/histogram_width"
+		android:layout_height="@dimen/histogram_height" 
+		/>
+	
+    <LinearLayout
+        android:id="@+id/mediaTimecodeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" 
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+	    
+        <LinearLayout
+            android:id="@+id/mediaLayout"
+            android:layout_width="@dimen/media_layout_width"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            
+	        <TextView
+		        android:id="@+id/mediaLabel"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_horizontal|top"
+		        android:text="@string/media_label"
+		        android:textSize="@dimen/media_text_size" />
+            <TextView
+		        android:id="@+id/mediaValue"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_horizontal|bottom"
+		        android:text="@string/media_default_string"
+		        android:textSize="@dimen/media_text_size" />
+        
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/timecodeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/timecode_default_text"
+            android:textSize="@dimen/timecode_text_size" />
+        
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/snapshot_button_main"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/snapshot_button_height"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:textColor="@color/snapshot_button_text_color"
+        android:background="@color/snapshot_button_bg_color"
+        android:text="@string/snapshot_button_text" />
+    
+    <Button
+        android:id="@+id/recButtonMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/record_button_height"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:textColor="@color/record_button_text_color"
+        android:background="@color/record_button_bg_color"
+        android:text="@string/rec_button_text" />
+	    
+</LinearLayout>

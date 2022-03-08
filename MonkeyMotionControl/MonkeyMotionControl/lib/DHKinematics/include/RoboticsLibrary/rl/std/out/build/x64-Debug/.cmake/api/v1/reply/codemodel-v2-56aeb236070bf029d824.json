@@ -1,0 +1,56 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Project",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "std_sources::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-std_sources-Debug-f5053813c4fe365ba7ac.json",
+					"name" : "std_sources",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/MonkeyMotionV0.98.979_RenewTimeline/MonkeyMotionControl/lib/DHKinematics/include/RoboticsLibrary/rl/std/out/build/x64-Debug",
+		"source" : "D:/MonkeyMotionV0.98.979_RenewTimeline/MonkeyMotionControl/lib/DHKinematics/include/RoboticsLibrary/rl/std"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

@@ -1,0 +1,3 @@
+include ':app', ':rcpSDK'
+project(':rcpSDK').projectDir = new File("$System.env.RCP_SDK/rcp_api/java")
+project(':rcpSDK').buildFileName = 'build_android.gradle'

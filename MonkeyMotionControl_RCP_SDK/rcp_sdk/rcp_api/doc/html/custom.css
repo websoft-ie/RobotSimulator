@@ -1,0 +1,49 @@
+h1.glow, h2.glow, h3.glow, h4.glow, h5.glow, h6.glow {
+        text-shadow: 0 0 15px #c00;
+}
+
+div.line.glow {
+        background-color: #c00;
+    box-shadow: 0 0 10px #c00;
+}
+
+.memberdecls td.glow, .fieldtable tr.glow {
+	background-color: #c00;
+	box-shadow: 0 0 15px #c00;
+}
+.memitem.glow {
+         box-shadow: 0 0 15px #c00;
+}
+
+a {
+	color: #b91919;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.contents a:visited {
+	color: #b91919;
+}
+
+#nav-tree a {
+	color: #191919;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+#nav-tree a:visited {
+	color: #242424;
+}
+
+#nav-tree .selected a {
+    text-decoration:none;
+    color:#fff;
+}
+
+#titlearea
+{
+    background-color: #000;
+    color:#fff;
+}
+
+

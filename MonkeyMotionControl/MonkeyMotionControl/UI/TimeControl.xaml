@@ -1,0 +1,42 @@
+﻿<UserControl x:Name="TimeControlInternal"
+             x:Class="MonkeyMotionControl.UI.TimeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:UI="clr-namespace:MonkeyMotionControl.UI"
+             mc:Ignorable="d" FontFamily="Consolas"
+             Margin="4,0" Padding="0" d:DesignHeight="14" d:DesignWidth="100">
+    <UserControl.Resources>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="1,-1,-3,0" />
+            <Setter Property="FontFamily" Value="{Binding ElementName=TimeControlInternal, Path=FontFamily}" />
+            <Setter Property="VerticalContentAlignment" Value="Bottom" />
+
+            <Setter Property="Foreground" Value="{Binding ElementName=TimeControlInternal, Path=Foreground}" />
+        </Style>
+
+        <Style TargetType="{x:Type UI:IntegerControl}">
+            <Setter Property="Margin" Value="0,0,-4,0" />
+            <Setter Property="FontFamily" Value="{Binding ElementName=TimeControlInternal, Path=FontFamily}" />
+            <Setter Property="Foreground" Value="{Binding ElementName=TimeControlInternal, Path=Foreground}" />
+
+            <!--EventSetter Event="ValueChanged" Handler="IntegerControl_ValueChanged" />
+            <EventSetter Event="ValueOverflown" Handler="IntegerControl_ValueOverflown" /-->
+        </Style>
+
+    </UserControl.Resources>
+
+    <StackPanel Orientation="Horizontal" Margin="0" VerticalAlignment="Center">
+        <UI:IntegerControl x:Name="HourLabel" Maximum="99" DigitsShown="2" ValueChanged="IntegerControl_ValueChanged" />
+        <Label>:</Label>
+        <UI:IntegerControl x:Name="MinuteLabel" Maximum="59" DigitsShown="2" ValueChanged="IntegerControl_ValueChanged" />
+        <Label>:</Label>
+        <UI:IntegerControl x:Name="SecondLabel" Maximum="59" DigitsShown="2" ValueChanged="IntegerControl_ValueChanged" />
+        <Label>.</Label>
+        <UI:IntegerControl x:Name="MillisecondLabel" Maximum="999" DigitsShown="3" ValueChanged="IntegerControl_ValueChanged" />
+    </StackPanel>
+
+</UserControl>

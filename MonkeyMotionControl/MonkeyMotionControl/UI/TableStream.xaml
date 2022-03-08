@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="MonkeyMotionControl.UI.TableStream"
+             x:Name="TableStreamInternal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:UI="clr-namespace:MonkeyMotionControl.UI"
+             mc:Ignorable="d">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal" Margin="3,3,3,3">
+            <Button x:Name="Btn_GotoSelPoint" Content="Go Sel" ToolTip="Go to Selected Point" Width="40" Height="20" Click="Btn_GotoSelPoint_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Margin="0,0,20,0"/>
+            <Button x:Name="Btn_AddPoint" Content="+" ToolTip="Add Point" Width="30" Height="20" Margin="0" Click="Btn_AddPoint_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
+            <Button x:Name="Btn_DeletePoint" Content="-" ToolTip="Remove Selected Point" Width="30" Height="20" Margin="0,0,20,0" Click="Btn_DeletePoint_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
+            <Button x:Name="Btn_Loadto3dSim" Content="L-Sim" ToolTip="Load Points to Simulator" Width="36" Height="20" Margin="0" Click="Btn_Loadto3dSim_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
+            <Button x:Name="Btn_Clear3dSim" Content="X-Sim" ToolTip="Clear Points from Simulator" Width="40" Height="20" Margin="0,0,20,0" Click="Btn_Clear3dSim_Click"  HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
+            <Button x:Name="Btn_ClearTable" Content="Clear" ToolTip="Clear Table" Width="40" Height="20" Margin="0,0,0,0" Click="Btn_ClearTable_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"/>
+            <Button x:Name="Btn_SaveFile" Content="Save" ToolTip="Save Table to File" Width="24" Height="24" Margin="0" Click="Btn_SaveFile_Click" />
+            <Button x:Name="Btn_OpenFile" Content="Open" ToolTip="Open Table from File" Width="24" Height="24" Margin="0" Click="Btn_OpenFile_Click" />
+        </StackPanel>
+        <DataGrid x:Name="DataGrid_SequenceStream" ItemsSource="{Binding}" SelectionMode="Single" Height="350" Width="400" BorderBrush="{x:Null}" />
+        
+    </StackPanel>
+</UserControl>

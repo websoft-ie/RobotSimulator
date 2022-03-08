@@ -1,0 +1,43 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <dimen name="label_size">15sp</dimen>
+    
+    <dimen name="seek_bar_layout_padding_sides">10dp</dimen>
+    <dimen name="seek_bar_layout_padding_top_bottom">20dp</dimen>
+    <item name="seek_bar_label_weight" format="float" type="dimen">0.25</item>
+    <item name="seek_bar_weight" format="float" type="dimen">0.55</item>
+    <item name="seek_bar_text_box_weight" format="float" type="dimen">0.15</item>
+    
+    <dimen name="list_view_text_size">25dp</dimen>
+    <dimen name="list_view_subtext_size">15dp</dimen>
+    <dimen name="list_view_item_padding_sides">20dp</dimen>
+    <dimen name="list_view_item_padding">10dp</dimen>
+    <dimen name="list_view_item_height">80dp</dimen>
+    
+    <dimen name="text_size_1">20dp</dimen>
+    <dimen name="timecode_text_size">40dp</dimen>
+    <dimen name="slate_text_size">30dp</dimen>
+    <dimen name="media_text_size">20dp</dimen>
+    <dimen name="vertical_margin_size">40dp</dimen>
+    <dimen name="histogram_height">90sp</dimen>
+    <dimen name="histogram_width">230sp</dimen>
+    <dimen name="spinner_list_item_height">40dp</dimen>
+    <dimen name="spinner_list_item_text_size">20dp</dimen>
+    <dimen name="record_button_height">40dp</dimen>
+    <dimen name="media_layout_width">60dp</dimen>
+    <dimen name="snapshot_button_height">40dp</dimen>
+    
+    <dimen name="menu_tree_title_bar_size">50dp</dimen>
+	<dimen name="menu_tree_fragment_text_size_back">15sp</dimen>
+	<dimen name="menu_tree_node_size">54dp</dimen>
+	<dimen name="menu_tree_title_padding_left">8dp</dimen>
+	<dimen name="menu_tree_node_title_text_size">15sp</dimen>
+	<dimen name="menu_tree_widget_padding_right">8dp</dimen>
+	<dimen name="menu_tree_fragment_text_size_node">15sp</dimen>
+	<dimen name="menu_tree_fragment_text_padding">8dp</dimen>
+	
+</resources>

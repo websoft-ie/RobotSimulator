@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_view_item_height"
+    android:paddingLeft="@dimen/list_view_item_padding_sides"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/itemTextLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+    
+	    <Button 
+	        android:id="@+id/itemTextButton"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@android:color/transparent"
+	        android:textSize="@dimen/list_view_text_size" />
+	    
+	    <TextView 
+	        android:id="@+id/itemTextView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="@dimen/list_view_subtext_size"/>
+	    
+    </LinearLayout>
+    
+    <ImageButton
+        android:id="@+id/arrowImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/app_name"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_action_next_item" />
+    
+<!-- 
+    <TextView 
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:textSize="@dimen/list_view_text_size" />
+
+    <ImageView
+        android:id="@+id/arrowImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_action_next_item" />
+-->
+
+</RelativeLayout>

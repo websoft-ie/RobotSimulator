@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/images">
+        <file alias="check">images/check.png</file>
+        <file alias="check-focus">images/check-focus.png</file>
+        <file alias="down-arrow">images/down-arrow.png</file>
+    </qresource>
+    <qresource prefix="/stylesheets">
+        <file alias="base-mac">stylesheets/stylesheet-base-mac.qss</file>
+        <file alias="base-win">stylesheets/stylesheet-base-win.qss</file>
+        <file alias="mac">stylesheets/stylesheet-mac.qss</file>
+        <file alias="win">stylesheets/stylesheet-win.qss</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,14 @@
+D:\Work\ManuelWork\MonkeyMotionControl_RCP_SDK\RCP_VS2017\rcp_wpf\bin\Debug\rcp_wpf.exe.config
+D:\Work\ManuelWork\MonkeyMotionControl_RCP_SDK\RCP_VS2017\rcp_wpf\bin\Debug\rcp_wpf.exe
+D:\Work\ManuelWork\MonkeyMotionControl_RCP_SDK\RCP_VS2017\rcp_wpf\bin\Debug\rcp_wpf.pdb
+D:\Work\ManuelWork\MonkeyMotionControl_RCP_SDK\RCP_VS2017\rcp_wpf\obj\Debug\MainWindow.g.cs
+D:\Work\ManuelWork\MonkeyMotionControl_RCP_SDK\RCP_VS2017\rcp_wpf\obj\Debug\App.g.cs
+D:\Work\ManuelWork\MonkeyMotionControl_RCP_SDK\RCP_VS2017\rcp_wpf\obj\Debug\rcp_wpf_MarkupCompile.cache
+D:\Work\ManuelWork\MonkeyMotionControl_RCP_SDK\RCP_VS2017\rcp_wpf\obj\Debug\rcp_wpf_MarkupCompile.lref
+D:\Work\ManuelWork\MonkeyMotionControl_RCP_SDK\RCP_VS2017\rcp_wpf\obj\Debug\MainWindow.baml
+D:\Work\ManuelWork\MonkeyMotionControl_RCP_SDK\RCP_VS2017\rcp_wpf\obj\Debug\rcp_wpf.g.resources
+D:\Work\ManuelWork\MonkeyMotionControl_RCP_SDK\RCP_VS2017\rcp_wpf\obj\Debug\rcp_wpf.Properties.Resources.resources
+D:\Work\ManuelWork\MonkeyMotionControl_RCP_SDK\RCP_VS2017\rcp_wpf\obj\Debug\rcp_wpf.csproj.GenerateResource.cache
+D:\Work\ManuelWork\MonkeyMotionControl_RCP_SDK\RCP_VS2017\rcp_wpf\obj\Debug\rcp_wpf.csproj.CoreCompileInputs.cache
+D:\Work\ManuelWork\MonkeyMotionControl_RCP_SDK\RCP_VS2017\rcp_wpf\obj\Debug\rcp_wpf.exe
+D:\Work\ManuelWork\MonkeyMotionControl_RCP_SDK\RCP_VS2017\rcp_wpf\obj\Debug\rcp_wpf.pdb

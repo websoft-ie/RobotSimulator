@@ -1,0 +1,99 @@
+<project basedir="." default="build" name="rcp">
+
+	<property environment="env"/>
+    
+   <condition property="isWindows"> <os family="windows"/> </condition>
+   <condition property="isLinux"> <os family="unix"/> </condition>
+    
+	<target name="clean">
+		<delete dir="bin"/>
+		<delete failonerror="false">
+			<fileset dir="jni/rcp.dir/Release" includes="*.*" />
+		</delete>
+		<delete failonerror="false">
+			<fileset dir="jni/Release" includes="*.*" />
+		</delete>		
+		<delete>
+    		<fileset dir="jni" includes="*.opp"/>
+  		</delete>
+  		<delete>
+    		<fileset dir="jni" includes="*.so"/>
+  		</delete>
+	</target>
+	
+	
+	<target name="prepare" depends="clean">
+		<echo 	message="Preparing environment..."/>
+		<mkdir 	dir="bin"/>
+		<copy 	file="src/com/red/common/Java_HandleWrapper.java" 
+		      	tofile="src/com/red/common/HandleWrapper.java" 
+		      	overwrite="true"/>
+		<echo 	message="env var is ${env.RCP_SDK}"/>
+		<exec 	dir="./jni" executable="cmake" failonerror="true">
+					<arg line="." />
+		</exec>
+		
+	</target>
+	
+	
+	<target name="build" depends="prepare">
+	
+		<echo		message="os.name 				= ${os.name}"/>
+		<echo  	message="os.arch 				= ${os.arch}"/>
+		<echo    message="ant.java.version 	= ${ant.java.version}"/>
+		<echo    message="java.version 			= ${java.version}"/>
+		<echo    message="java.class.version 	= ${java.class.version}"/>
+		<javac 	srcdir="src" 
+		      	destdir="bin"
+		      	includeantruntime="false"
+		      	excludes="com/red/common/Java_HandleWrapper.java,com/red/common/Android_HandleWrapper.java"/>
+		<javac	srcdir="test"
+					includeantruntime="false"
+					destdir="bin"/>
+		<exec 	dir="./jni" executable="cmake" failonerror="true">
+					<arg line="--build . --config Release" />
+		</exec>
+	</target>	
+	
+	<target name="windows" if="isWindows" depends="build">
+	
+		<echo 	message="OS is Windows, installing..."/>
+		<copy 	file="jni/Release/rcp.dll" 
+		      	tofile="bin/rcp.dll" 
+		      	overwrite="true"/>
+
+	</target>
+	
+	<target name="linux" if="isLinux" depends="build">
+	
+		<echo 	message="OS is Linux/Unix, installing..."/>
+		<copy 	file="jni/librcp.so" 
+		      	tofile="bin/librcp.so" 
+		      	overwrite="true"/>
+
+	</target>
+			
+	<target name="install" depends="linux,windows">
+	
+		<echo 	message="Install Complete."/>
+
+	</target>
+	
+	<target name="run">
+	
+		<echo 	message="Program is interactive, please use command line."/>
+		<echo 	message="The following are examples of command line invocations:"/>
+		<echo    message="(linux)   >> java -Djava.library.path=./bin -cp ./bin rcpTest"/>
+		<echo  	message="(windows) >> C:/&quot;Program Files (x86)&quot;/Java/jdk1.8.0/bin/java -Djava.library.path=./bin -cp ./bin rcpTest"/>
+	</target>
+	
+	<target name="help">
+	
+		<echo 	message="RCP SDK Java Example Code:"/>
+		<echo 	message=" - Clean the code:   >> ant clean"/>
+		<echo    message=" - Build the code:   >> ant build"/>
+		<echo  	message=" - Install the code: >> ant install"/>
+		<echo  	message=" - Help on running:  >> ant run"/>
+	</target>
+</project>
+    	

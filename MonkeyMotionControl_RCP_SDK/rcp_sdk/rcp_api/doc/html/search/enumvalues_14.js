@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['wl_5fencryption_5fnone',['WL_ENCRYPTION_NONE',['../rcp__api_8c_a67504316471d79dbd7042c1fb0a45656.html#a67504316471d79dbd7042c1fb0a45656a0b3c49b182716d27e15a5d7ecc5c682b',1,'rcp_api.c']]],
+  ['wl_5fencryption_5fwep',['WL_ENCRYPTION_WEP',['../rcp__api_8c_a67504316471d79dbd7042c1fb0a45656.html#a67504316471d79dbd7042c1fb0a45656a9578e75728eba9155874bdf58fc171ff',1,'rcp_api.c']]],
+  ['wl_5fencryption_5fwpa',['WL_ENCRYPTION_WPA',['../rcp__api_8c_a67504316471d79dbd7042c1fb0a45656.html#a67504316471d79dbd7042c1fb0a45656a1e75f1b89deb2d8670cb95a909e7ebcf',1,'rcp_api.c']]],
+  ['wl_5fencryption_5fwpa2',['WL_ENCRYPTION_WPA2',['../rcp__api_8c_a67504316471d79dbd7042c1fb0a45656.html#a67504316471d79dbd7042c1fb0a45656aa36106e2e4d3af3260db9b3bcfd853d7',1,'rcp_api.c']]],
+  ['wl_5ferror_5fconnection_5ffailed',['WL_ERROR_CONNECTION_FAILED',['../rcp__api_8c_a6abc8866c8db73618c0f829ca90b2fa3.html#a6abc8866c8db73618c0f829ca90b2fa3a9843cc63af3ae01c3b1a795895a0ccef',1,'rcp_api.c']]],
+  ['wl_5ferror_5finvalid_5fadhoc_5fpw',['WL_ERROR_INVALID_ADHOC_PW',['../rcp__api_8c_a6abc8866c8db73618c0f829ca90b2fa3.html#a6abc8866c8db73618c0f829ca90b2fa3a0428eb3e14ad4377ab9fabce2e788082',1,'rcp_api.c']]],
+  ['wl_5ferror_5finvalid_5fip_5faddr',['WL_ERROR_INVALID_IP_ADDR',['../rcp__api_8c_a6abc8866c8db73618c0f829ca90b2fa3.html#a6abc8866c8db73618c0f829ca90b2fa3ab06b39fd50f1f7746bddba4905dd4745',1,'rcp_api.c']]],
+  ['wl_5ferror_5finvalid_5fwep_5fpw',['WL_ERROR_INVALID_WEP_PW',['../rcp__api_8c_a6abc8866c8db73618c0f829ca90b2fa3.html#a6abc8866c8db73618c0f829ca90b2fa3a78da43f16f94b636e2d34a8879b55723',1,'rcp_api.c']]],
+  ['wl_5ferror_5fno_5ferror',['WL_ERROR_NO_ERROR',['../rcp__api_8c_a6abc8866c8db73618c0f829ca90b2fa3.html#a6abc8866c8db73618c0f829ca90b2fa3a9f7d35385209147c53244d367191669c',1,'rcp_api.c']]],
+  ['wl_5ferror_5funknown_5ferror',['WL_ERROR_UNKNOWN_ERROR',['../rcp__api_8c_a6abc8866c8db73618c0f829ca90b2fa3.html#a6abc8866c8db73618c0f829ca90b2fa3a3f4ab068a83ad00c3e25539ddfbb0979',1,'rcp_api.c']]],
+  ['wl_5ferror_5fwrong_5fencryption',['WL_ERROR_WRONG_ENCRYPTION',['../rcp__api_8c_a6abc8866c8db73618c0f829ca90b2fa3.html#a6abc8866c8db73618c0f829ca90b2fa3ac4124eb93a7e67d266c9d331a81cf405',1,'rcp_api.c']]],
+  ['wl_5ferror_5fwrong_5fpassphrase',['WL_ERROR_WRONG_PASSPHRASE',['../rcp__api_8c_a6abc8866c8db73618c0f829ca90b2fa3.html#a6abc8866c8db73618c0f829ca90b2fa3a8e88784647eb51d7ad540fda0995e64a',1,'rcp_api.c']]],
+  ['wl_5fmode_5fad_5fhoc',['WL_MODE_AD_HOC',['../rcp__api_8c_a8143d8c395026289e0461eb2ee139e5e.html#a8143d8c395026289e0461eb2ee139e5ea92986019eea9da1a8110bbb7b91e79a2',1,'rcp_api.c']]],
+  ['wl_5fmode_5fdisabled',['WL_MODE_DISABLED',['../rcp__api_8c_a8143d8c395026289e0461eb2ee139e5e.html#a8143d8c395026289e0461eb2ee139e5ea3c709e1baab48f38a0ccab49b2f48ca5',1,'rcp_api.c']]],
+  ['wl_5fmode_5finfrastructure',['WL_MODE_INFRASTRUCTURE',['../rcp__api_8c_a8143d8c395026289e0461eb2ee139e5e.html#a8143d8c395026289e0461eb2ee139e5eadb6fd47bba047ac3c722aecada3587ed',1,'rcp_api.c']]],
+  ['wl_5fstatus_5fconnected',['WL_STATUS_CONNECTED',['../rcp__api_8c_a8620f1e676d897f95fdbdc12bac59f42.html#a8620f1e676d897f95fdbdc12bac59f42ac8870b832840fe2129335ad8e915f97f',1,'rcp_api.c']]],
+  ['wl_5fstatus_5fconnecting',['WL_STATUS_CONNECTING',['../rcp__api_8c_a8620f1e676d897f95fdbdc12bac59f42.html#a8620f1e676d897f95fdbdc12bac59f42ae4b848de91e86a4c44c8a67b94e88b74',1,'rcp_api.c']]],
+  ['wl_5fstatus_5ferror',['WL_STATUS_ERROR',['../rcp__api_8c_a8620f1e676d897f95fdbdc12bac59f42.html#a8620f1e676d897f95fdbdc12bac59f42a2f04f81ff663e9f718bf925840dc0e1d',1,'rcp_api.c']]],
+  ['wl_5fstatus_5flost',['WL_STATUS_LOST',['../rcp__api_8c_a8620f1e676d897f95fdbdc12bac59f42.html#a8620f1e676d897f95fdbdc12bac59f42a1c45553366583a6932617e5b4ec182d9',1,'rcp_api.c']]],
+  ['wl_5fstatus_5foffline',['WL_STATUS_OFFLINE',['../rcp__api_8c_a8620f1e676d897f95fdbdc12bac59f42.html#a8620f1e676d897f95fdbdc12bac59f42af212c67dcdc9b5aabf6997a4771d8a2c',1,'rcp_api.c']]],
+  ['wl_5fstatus_5fsearching',['WL_STATUS_SEARCHING',['../rcp__api_8c_a8620f1e676d897f95fdbdc12bac59f42.html#a8620f1e676d897f95fdbdc12bac59f42a3696a8832ff101794f7436e251cb3cee',1,'rcp_api.c']]]
+];

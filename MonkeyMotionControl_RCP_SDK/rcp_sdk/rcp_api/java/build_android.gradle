@@ -1,0 +1,96 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+
+sourceSets {
+	main {
+		java {
+			srcDir 'src/com/red/rcp'
+			srcDir 'src/com/red/common'
+			exclude 'Android_HandleWrapper.java', 'Java_HandleWrapper.java'
+		}
+    }
+}
+
+compileJava {
+	dependsOn "rcpJavaPrepare"
+	classpath = files("$System.env.ANDROID_PLATFORM/android.jar")
+}
+
+jar {
+	baseName = "rcp"
+	finalizedBy "rcpNativeInstall"
+}
+
+clean {
+	finalizedBy "rcpNativeUninstall"
+}
+
+task rcpJavaPrepare(type: Copy) {
+	from 'src/com/red/common/Android_HandleWrapper.java'
+	into 'src/com/red/common'
+	rename { String fileName ->
+        fileName.replace('Android_HandleWrapper', 'HandleWrapper')
+    }
+}
+
+task rcpNativeClean(type: Exec) {
+	description "Cleans native C/C++ RCP SDK library."
+	commandLine "$System.env.ANDROID_NDK_HOME/ndk-build.cmd", 'clean'
+	workingDir "$System.env.RCP_SDK/rcp_api/java"
+}
+
+task rcpNativeBuild(type: Exec) {
+	/*
+	   These input files are only here so that gradle can keep track of dependencies for incremental builds.
+	   The list doesn't actually control which files are being built. That is still done the old way with
+	   ndk-build and Android.mk files.
+	 */
+	description "Builds librcp.so, a native C/C++ RCP SDK library."
+	commandLine "$System.env.ANDROID_NDK_HOME/ndk-build.cmd"
+	workingDir "$System.env.RCP_SDK/rcp_api/java/jni"
+	outputs.dir "$System.env.RCP_SDK/rcp_api/java/libs"
+
+	/*
+	   The environment block sets those variables just for the process that we're launching to build the
+	   native libraries. Additionally we have to define those same strings locally, that's why it looks like it's duplicated.
+	   These variables are set differently in trunk vs in released SDK.
+	 */
+	String RCP_CORE = "$System.env.RCP_SDK/rcp_core"
+	String RCP_API = "$System.env.RCP_SDK/rcp_api"
+	environment "RCP_CORE", RCP_CORE
+	environment "RCP_API", RCP_API
+
+	def out_files           = fileTree(dir: "$System.env.RCP_SDK/rcp_api/java/libs", include: '**/*.so')
+	outputs.files(out_files)
+
+	def ds_files      = fileTree(dir: RCP_CORE + "/decorated_string", include: 'decorated_string.h')
+	def clist_files	  = fileTree(dir: RCP_CORE + "/clist", includes: ['clist.cpp', 'clist.h'])
+	def rcp_api_files = fileTree(dir: RCP_API, includes: ['*.c', '*.h'])
+	def jni_files     = fileTree(dir: "$System.env.RCP_SDK/rcp_api/java/jni", includes: ['*.cpp', '*.c', '*.h', '*.mk'])
+	def all_files = ds_files + clist_files + rcp_api_files + jni_files
+	inputs.files(all_files)
+}
+
+task rcpNativeInstall(type: Copy) {
+	description "Installs native C/C++ RCP SDK library into Android Studio application project."
+    dependsOn "rcpNativeBuild"
+	from 'libs'
+	def nativePath = project.getRootDir().getAbsolutePath() + "/app/src/main/jniLibs"
+	into "$nativePath"
+}
+
+task rcpNativeUninstall(type: Delete) {
+	description "Removes native C/C++ RCP SDK library from Android Studio application project."
+    dependsOn "rcpNativeClean"
+	def nativePath = project.getRootDir().getAbsolutePath() + "/app/src/main/jniLibs"
+	delete "$nativePath", "$System.env.RCP_SDK/rcp_api/java/libs"
+}
+
+configurations {
+    rcpBuild
+}
+
+artifacts {
+	rcpBuild jar
+}

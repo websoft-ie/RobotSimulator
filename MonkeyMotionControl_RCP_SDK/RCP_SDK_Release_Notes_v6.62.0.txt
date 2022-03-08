@@ -1,0 +1,717 @@
+R.C.P. SDK Release Notes v6.62.0                              October 30, 2020
+
+
+IMPORTANT: 
+* v6.0.36 UDP Discovery process is not compatible with v5.1.x. Refer to the change list for details.
+* R.C.P. SDK is compatible with DSMC firmware v5.2.7 or later.
+* Packages include a read_me file containing detailed information as needed
+* Please consult the R.C.P. Reference Guide for details
+* Download the latest version of the R.C.P. SDK and documentation from www.red.com/developers.
+* See CHANGELOG.html for change details.
+
+
+R.C.P. SDK V6.62.0
+Added parameters:
+	RCP_PARAM_CDL_ENABLE
+	RCP_PARAM_LUT_FEED_1_ENABLE
+
+R.C.P. SDK V6.61.0
+Added parameters:
+    RCP_PARAM_VOLTAGE_THRESHOLD_DC_IN
+    RCP_PARAM_ENABLE_VOLTAGE_THRESHOLD_DC_IN
+    RCP_PARAM_POWER_IN_TYPE_0 -
+    RCP_PARAM_POWER_IN_VOLTAGE_BELOW_THRESHOLD_0 -
+Deprecated parameters:
+    RCP_PARAM_VOLTAGE_BELOW_THRESHOLD
+
+    
+R.C.P. SDK V6.60.2
+* Added parameters:
+    RCP_PARAM_CENTER_GUIDE_MARKER_TYPE
+    RCP_PARAM_SHUTDOWN_NOTIFICATION
+    RCP_PARAM_PEAKING_LEVEL
+    RCP_PARAM_VOLTAGE_THRESHOLD
+    RCP_PARAM_ENABLE_VOLTAGE_THRESHOLD
+    RCP_PARAM_VOLTAGE_BELOW_THRESHOLD
+
+    
+R.C.P. SDK V6.51.2
+* Added parameters:
+    RCP_PARAM_SENSOR_SENSITIVITY
+
+    
+R.C.P. SDK V6.51.0
+* Added parameters:
+    RCP_PARAM_QT_DROPPED_FRAMES
+    RCP_PARAM_MXF_DROPPED_FRAMES
+    RCP_PARAM_R3D_DROPPED_FRAMES
+* Added is_paused field to rcp_cur_rftp_status_cb_data_t
+
+
+R.C.P. SDK V6.50.23 CHANGES
+* Added parameters:
+    RCP_PARAM_MIN_RECORD_PROXY_BAKED_IN_SETTINGS
+    RCP_PARAM_MAX_RECORD_PROXY_BAKED_IN_SETTINGS
+
+    
+R.C.P. SDK V6.50.22 CHANGES
+* Added parameters:
+    RCP_PARAM_ISO_CAL2_ENABLED
+    RCP_PARAM_MONITOR_LUT_LCD
+    RCP_PARAM_MONITOR_LUT_EVF
+    RCP_PARAM_MONITOR_LUT_HDMI
+    RCP_PARAM_MONITOR_LUT_HDSDI
+    RCP_PARAM_MONITOR_LUT_REAR_LCD
+    RCP_PARAM_MONITOR_LUT_REAR_EVF
+    RCP_PARAM_MONITOR_LUT_REAR_HDSDI1
+    RCP_PARAM_MONITOR_LUT_REAR_HDSDI2
+    RCP_PARAM_MONITOR_LUT_BRAIN_LCD3
+    RCP_PARAM_MONITOR_LUT_BRAIN_EVF3
+    RCP_PARAM_RECORD_PROXY_BAKED_IN_SETTINGS
+
+    
+R.C.P. SDK V6.50.20 CHANGES
+* Added Client ID feature: The API will now inform the camera with the client application provided information: see client_name, client_version, and client_user added to rcp_camera_connection_info_t. This information may be shown to the camera operator.
+* Added rcp_interface_enabled and rcp_interface_enabled_valid fields to rcp_cam_info_t.
+* Added RCP_CONNECTION_STATE_RCP_DISABLED_ON_INTERFACE to rcp_connection_state_t. This is used to signify that RCP has been disabled on the interface connected to (the user will need to re-enable before a connection is allowed)
+* Added rcp_get_periodic_is_supported, rcp_get_periodic_on, and rcp_get_periodic_off.
+* Added rcp_get_default
+
+Note: Periodic data (RCP_PARAM_HISTOGRAM, RCP_PARAM_AUDIO_VU_DATA, RCP_PARAM_CAMERA_PITCH, and RCP_PARAM_CAMERA_ROLL) is no longer enabled by default on the camera. If you application requires this data, you must enable it using:
+
+* Deprecated parameters:
+    RCP_PARAM_SET_TIMECODE
+    RCP_PARAM_PROXY_ENCODE_FRAMERATE (replaced with RCP_PARAM_PRORES_ENCODE_FRAMERATE and RCP_PARAM_MXF_ENCODE_FRAMERATE)
+    RCP_PARAM_MONITOR_SPLIT_CURVE
+    RCP_PARAM_MONITOR_CURVE_LCD
+    RCP_PARAM_MONITOR_CURVE_HDMI
+    RCP_PARAM_MONITOR_CURVE_HDSDI
+    RCP_PARAM_MONITOR_CURVE_EVF
+    RCP_PARAM_MONITOR_CURVE_REAR_LCD
+    RCP_PARAM_MONITOR_CURVE_REAR_HDSDI1
+    RCP_PARAM_MONITOR_CURVE_REAR_HDSDI2
+    RCP_PARAM_MONITOR_CURVE_REAR_EVF
+    RCP_PARAM_MONITOR_CURVE_LCD3
+    RCP_PARAM_MONITOR_CURVE_EVF3
+    RCP_PARAM_RECORD_R3D_METADATA_CURVE
+    RCP_PARAM_FLIP_MIRROR_FEED_0
+    RCP_PARAM_FLIP_MIRROR_FEED_1
+* Added parameters:
+    RCP_PARAM_CDL_SATURATION
+    RCP_PARAM_EXPOSURE_ADJUST
+    RCP_PARAM_CDL_OFFSET_RED
+    RCP_PARAM_CDL_OFFSET_GREEN
+    RCP_PARAM_CDL_OFFSET_BLUE
+    RCP_PARAM_CDL_POWER_RED
+    RCP_PARAM_CDL_POWER_GREEN
+    RCP_PARAM_CDL_POWER_BLUE
+    RCP_PARAM_CDL_SLOPE_RED
+    RCP_PARAM_CDL_SLOPE_GREEN
+    RCP_PARAM_CDL_SLOPE_BLUE
+    RCP_PARAM_GIGABIT_ETHERNET_MAC_ADDRESS
+    RCP_PARAM_WIFI_MAC_ADDRESS
+    RCP_PARAM_PRORES_ENCODE_FRAMERATE
+    RCP_PARAM_MXF_ENCODE_FRAMERATE
+    RCP_PARAM_MONITOR_MODE_LCD3
+    RCP_PARAM_MONITOR_OVERLAY_LCD3
+    RCP_PARAM_MONITOR_FREQ_LCD3
+    RCP_PARAM_MONITOR_CURVE_LCD3
+    RCP_PARAM_MONITOR_TOOLS_LCD3
+    RCP_PARAM_MONITOR_UI_FLIP_MIRROR_LCD3
+    RCP_PARAM_MONITOR_VIDEO_FLIP_LCD3
+    RCP_PARAM_MONITOR_FLIP_MIRROR_LCD3
+    RCP_PARAM_MONITOR_FRAMED_OVERLAY_LCD3
+    RCP_PARAM_MONITOR_DOCK_MENUS_LCD3
+    RCP_PARAM_MONITOR_FEED_LCD3
+    RCP_PARAM_MONITOR_FLIP_MIRROR_SUPPORTED_LCD3
+    RCP_PARAM_MONITOR_MODE_EVF3
+    RCP_PARAM_MONITOR_OVERLAY_EVF3
+    RCP_PARAM_MONITOR_FREQ_EVF3
+    RCP_PARAM_MONITOR_CURVE_EVF3
+    RCP_PARAM_MONITOR_TOOLS_EVF3
+    RCP_PARAM_MONITOR_UI_FLIP_MIRROR_EVF3
+    RCP_PARAM_MONITOR_VIDEO_FLIP_EVF3
+    RCP_PARAM_MONITOR_FLIP_MIRROR_EVF3
+    RCP_PARAM_MONITOR_FRAMED_OVERLAY_EVF3
+    RCP_PARAM_MONITOR_DOCK_MENUS_EVF3
+    RCP_PARAM_MONITOR_FEED_EVF3
+    RCP_PARAM_MONITOR_FLIP_MIRROR_SUPPORTED_EVF3
+    RCP_PARAM_MONITOR_BRIGHTNESS_LCD3
+    RCP_PARAM_MONITOR_BRIGHTNESS_EVF3
+    RCP_PARAM_ND_INCREMENT_SIZE
+    RCP_PARAM_ZEBRA_1_PATTERN
+    RCP_PARAM_ZEBRA_2_PATTERN
+    RCP_PARAM_ZEBRA_1_COLOR
+    RCP_PARAM_ZEBRA_2_COLOR
+    RCP_PARAM_START_USER_CAL_MANUAL_CURRENT_INT_TIME
+    RCP_PARAM_START_USER_CAL_MANUAL_DEFAULT_INT_TIME
+    RCP_PARAM_START_USER_CAL_AUTO
+    RCP_PARAM_MONITOR_CONTROL_SCREEN
+    RCP_PARAM_RCP_CLIENT_LIST
+    RCP_PARAM_BWF_ENABLE
+    RCP_PARAM_BWF_VALID
+    RCP_PARAM_WSH_FOCUS_WHEEL
+    RCP_PARAM_SIDE_MODULE_LOCK_KEYS
+    RCP_PARAM_SIDE_MODULE_RECORD_KEY_LOCKABLE
+    RCP_PARAM_SIDE_MODULE_NAV_KEYS_LOCKABLE
+    RCP_PARAM_SHOW_KEY_ACTION_NOTIFICATIONS
+    RCP_PARAM_POWER_IN_LIST
+    RCP_PARAM_POWER_IN_PERCENT_0 - RCP_PARAM_POWER_IN_PERCENT_LAST
+    RCP_PARAM_POWER_IN_RUNTIME_0 - RCP_PARAM_POWER_IN_RUNTIME_LAST
+    RCP_PARAM_POWER_IN_VOLTAGE_0 - RCP_PARAM_POWER_IN_VOLTAGE_LAST
+    RCP_PARAM_POWER_IN_CURRENT_0 - RCP_PARAM_POWER_IN_CURRENT_LAST
+    RCP_PARAM_POWER_IN_PRESENT_0 - RCP_PARAM_POWER_IN_PRESENT_LAST
+    RCP_PARAM_POWER_OUT_LIST
+    RCP_PARAM_POWER_OUT_ENABLE_0 - RCP_PARAM_POWER_OUT_ENABLE_LAST
+    RCP_PARAM_POWER_OUT_STATUS_0 - RCP_PARAM_POWER_OUT_STATUS_LAST
+    RCP_PARAM_POWER_OUT_RESET_0 - RCP_PARAM_POWER_OUT_RESET_LAST
+    RCP_PARAM_POWER_OUT_CURRENT_0 - RCP_PARAM_POWER_OUT_CURRENT_LAST
+    RCP_PARAM_MONITOR_LIST
+    RCP_PARAM_SIDE_UI_NAME
+    RCP_PARAM_SENSOR_WIDTH_PHY
+    RCP_PARAM_SENSOR_HEIGHT_PHY
+    RCP_PARAM_SENSOR_DIMENSIONS_PHY
+    RCP_PARAM_FORMAT_WIDTH_PHY
+    RCP_PARAM_FORMAT_HEIGHT_PHY
+    RCP_PARAM_FORMAT_DIMENSIONS_PHY
+    RCP_PARAM_FORMAT_WIDTH_PIXELS
+    RCP_PARAM_FORMAT_HEIGHT_PIXELS
+    RCP_PARAM_FORMAT_DIMENSIONS_PIXELS
+    RCP_PARAM_RECORD_FORMAT_SPHERICAL
+    RCP_PARAM_RECORD_FORMAT_ANA_1_3
+    RCP_PARAM_RECORD_FORMAT_ANA_1_25
+    RCP_PARAM_RECORD_FORMAT_ANA_2
+    RCP_PARAM_RECORD_FORMAT_RESOLUTION
+    RCP_PARAM_RECORD_FORMAT_ASPECT_RATIO
+    RCP_PARAM_RECORD_FORMAT_ANAMORPHIC
+    RCP_PARAM_RECORD_FORMAT_LOOKAROUND
+    RCP_PARAM_SENSOR_NAME
+    RCP_PARAM_SHADOW_FORMAT_WIDTH_PHY
+    RCP_PARAM_SHADOW_FORMAT_HEIGHT_PHY
+    RCP_PARAM_SHADOW_FORMAT_DIMENSIONS_PHY
+    RCP_PARAM_SHADOW_FORMAT_WIDTH_PIXELS
+    RCP_PARAM_SHADOW_FORMAT_HEIGHT_PIXELS
+    RCP_PARAM_SHADOW_FORMAT_DIMENSIONS_PIXELS
+    RCP_PARAM_AMBIENT_CHANNEL
+    RCP_PARAM_KEY_MAPPING_ACTION_LIST
+    RCP_PARAM_DIALOG_LIST
+    RCP_PARAM_CAMERA_SCRIPT_LIST
+    RCP_PARAM_COLOR_SCIENCE
+    RCP_PARAM_IMAGE_PIPELINE_MODE
+    RCP_PARAM_SUPPORT_CONTACT
+    RCP_PARAM_CAMERA_CDL_LIST
+    RCP_PARAM_CAMERA_CDL_APPLY
+    RCP_PARAM_CAMERA_CDL_EXPORT_TO_MEDIA
+    RCP_PARAM_CAMERA_CDL_EXPORT_ALL_TO_MEDIA
+    RCP_PARAM_CAMERA_CDL_CREATE
+    RCP_PARAM_CAMERA_CDL_DELETE
+    RCP_PARAM_MEDIA_CDL_LIST
+    RCP_PARAM_MEDIA_CDL_IMPORT_TO_CAMERA
+    RCP_PARAM_MEDIA_CDL_IMPORT_ALL_TO_CAMERA
+    RCP_PARAM_SLATE_CAMERA_COLOR
+    RCP_PARAM_SIDE_UI_PAGE_USER_LEFT
+    RCP_PARAM_SIDE_UI_PAGE_AUDIO_LEFT
+    RCP_PARAM_SIDE_UI_PAGE_MONITOR_LEFT
+    RCP_PARAM_SIDE_UI_AUTO_HOME_LEFT
+    RCP_PARAM_SIDE_UI_AUTO_HOME_TIMEOUT_LEFT
+    RCP_PARAM_SIDE_UI_PAGE_USER_RIGHT
+    RCP_PARAM_SIDE_UI_PAGE_AUDIO_RIGHT
+    RCP_PARAM_SIDE_UI_PAGE_MONITOR_RIGHT
+    RCP_PARAM_SIDE_UI_AUTO_HOME_RIGHT
+    RCP_PARAM_SIDE_UI_AUTO_HOME_TIMEOUT_RIGHT
+    RCP_PARAM_MONITOR_MODE_REAR_UHDSDI1
+    RCP_PARAM_MONITOR_MODE_REAR_UHDSDI2
+    RCP_PARAM_MONITOR_FREQ_REAR_UHDSDI
+    RCP_PARAM_DISPLAY_PRESET_REAR_UHDSDI
+    RCP_PARAM_RETURN_FEED
+    RCP_PARAM_RETURN_FEED_STATE
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_LCD
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_HDMI
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_HDSDI
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_EVF
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_REAR_LCD
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_REAR_HDSDI1
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_REAR_HDSDI2
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_REAR_EVF
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_LCD3
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_EVF3
+    RCP_PARAM_OUTPUT_TRANSFORM
+    RCP_PARAM_DISPLAY_PRESET_LCD
+    RCP_PARAM_DISPLAY_PRESET_HDMI
+    RCP_PARAM_DISPLAY_PRESET_HDSDI
+    RCP_PARAM_DISPLAY_PRESET_EVF
+    RCP_PARAM_DISPLAY_PRESET_REAR_LCD
+    RCP_PARAM_DISPLAY_PRESET_REAR_HDSDI1
+    RCP_PARAM_DISPLAY_PRESET_REAR_HDSDI2
+    RCP_PARAM_DISPLAY_PRESET_REAR_EVF
+    RCP_PARAM_DISPLAY_PRESET_LCD3
+    RCP_PARAM_DISPLAY_PRESET_EVF3
+    RCP_PARAM_OUTPUT_TONE_MAP
+    RCP_PARAM_FLIP_MIRROR_FEED_0_1
+    RCP_PARAM_MIN_FRAME_PROCESSING_MODE
+    RCP_PARAM_MAX_FRAME_PROCESSING_MODE
+    RCP_PARAM_MIN_FRAME_PROCESSING_FRAME_COUNT
+    RCP_PARAM_MAX_FRAME_PROCESSING_FRAME_COUNT
+    RCP_PARAM_ROLL_OFF
+    RCP_PARAM_LOOKAROUND_AVAILABLE
+    RCP_PARAM_LOG_VIEW_MODE
+    RCP_PARAM_AUTO_FOCUS_PEAK
+    RCP_PARAM_ISO_CAL2_ENABLED
+* Added support for user metadata RCP messages
+    rcp_user_metadata_is_supported
+    rcp_user_metadata_register
+    rcp_user_metadata_unregister
+    rcp_user_metadata_send
+* Added new handle_user_metadata_cb callback
+* Added support for key mapping via RCP messages
+    rcp_key_mapping_is_supported
+    rcp_key_mapping_get_action_list
+    rcp_key_mapping_get_mapping
+    rcp_key_mapping_set_mapping
+* Added new menu tree node: RCP_MENU_NODE_TYPE_KEY_MAPPING_LEAF
+
+
+R.C.P. SDK v6.50.12 CHANGES
+* Added Client ID feature: The API will now inform the camera with the client application provided information: see client_name, client_version, and client_user added to rcp_camera_connection_info_t. This information may be shown to the camera operator.
+* Added rcp_interface_enabled and rcp_interface_enabled_valid fields to rcp_cam_info_t.
+* Added RCP_CONNECTION_STATE_RCP_DISABLED_ON_INTERFACE to rcp_connection_state_t. This is used to signify that RCP has been disabled on the interface connected to (the user will need to re-enable before a connection is allowed)
+* Added rcp_get_periodic_is_supported, rcp_get_periodic_on, and rcp_get_periodic_off.
+* Added rcp_get_default
+* Deprecated parameters:
+    RCP_PARAM_SET_TIMECODE
+    RCP_PARAM_PROXY_ENCODE_FRAMERATE (replaced with RCP_PARAM_PRORES_ENCODE_FRAMERATE and RCP_PARAM_MXF_ENCODE_FRAMERATE)
+    RCP_PARAM_MONITOR_SPLIT_CURVE
+    RCP_PARAM_MONITOR_CURVE_LCD
+    RCP_PARAM_MONITOR_CURVE_HDMI
+    RCP_PARAM_MONITOR_CURVE_HDSDI
+    RCP_PARAM_MONITOR_CURVE_EVF
+    RCP_PARAM_MONITOR_CURVE_REAR_LCD
+    RCP_PARAM_MONITOR_CURVE_REAR_HDSDI1
+    RCP_PARAM_MONITOR_CURVE_REAR_HDSDI2
+    RCP_PARAM_MONITOR_CURVE_REAR_EVF
+    RCP_PARAM_MONITOR_CURVE_LCD3
+    RCP_PARAM_MONITOR_CURVE_EVF3    
+    RCP_PARAM_RECORD_R3D_METADAT    A_CURVE
+    RCP_PARAM_FLIP_MIRROR_FEED_0
+    RCP_PARAM_FLIP_MIRROR_FEED_1
+* Added parameters:
+    RCP_PARAM_CDL_SATURATION
+    RCP_PARAM_EXPOSURE_ADJUST
+    RCP_PARAM_CDL_OFFSET_RED
+    RCP_PARAM_CDL_OFFSET_GREEN
+    RCP_PARAM_CDL_OFFSET_BLUE
+    RCP_PARAM_CDL_POWER_RED
+    RCP_PARAM_CDL_POWER_GREEN
+    RCP_PARAM_CDL_POWER_BLUE
+    RCP_PARAM_CDL_SLOPE_RED
+    RCP_PARAM_CDL_SLOPE_GREEN
+    RCP_PARAM_CDL_SLOPE_BLUE
+    RCP_PARAM_GIGABIT_ETHERNET_MAC_ADDRESS
+    RCP_PARAM_WIFI_MAC_ADDRESS
+    RCP_PARAM_PRORES_ENCODE_FRAMERATE
+    RCP_PARAM_MXF_ENCODE_FRAMERATE
+    RCP_PARAM_MONITOR_MODE_LCD3
+    RCP_PARAM_MONITOR_OVERLAY_LCD3
+    RCP_PARAM_MONITOR_FREQ_LCD3
+    RCP_PARAM_MONITOR_CURVE_LCD3
+    RCP_PARAM_MONITOR_TOOLS_LCD3
+    RCP_PARAM_MONITOR_UI_FLIP_MIRROR_LCD3
+    RCP_PARAM_MONITOR_VIDEO_FLIP_LCD3
+    RCP_PARAM_MONITOR_FLIP_MIRROR_LCD3
+    RCP_PARAM_MONITOR_FRAMED_OVERLAY_LCD3
+    RCP_PARAM_MONITOR_DOCK_MENUS_LCD3
+    RCP_PARAM_MONITOR_FEED_LCD3
+    RCP_PARAM_MONITOR_FLIP_MIRROR_SUPPORTED_LCD3
+    RCP_PARAM_MONITOR_MODE_EVF3
+    RCP_PARAM_MONITOR_OVERLAY_EVF3
+    RCP_PARAM_MONITOR_FREQ_EVF3
+    RCP_PARAM_MONITOR_CURVE_EVF3
+    RCP_PARAM_MONITOR_TOOLS_EVF3
+    RCP_PARAM_MONITOR_UI_FLIP_MIRROR_EVF3
+    RCP_PARAM_MONITOR_VIDEO_FLIP_EVF3
+    RCP_PARAM_MONITOR_FLIP_MIRROR_EVF3
+    RCP_PARAM_MONITOR_FRAMED_OVERLAY_EVF3
+    RCP_PARAM_MONITOR_DOCK_MENUS_EVF3
+    RCP_PARAM_MONITOR_FEED_EVF3
+    RCP_PARAM_MONITOR_FLIP_MIRROR_SUPPORTED_EVF3
+    RCP_PARAM_MONITOR_BRIGHTNESS_LCD3
+    RCP_PARAM_MONITOR_BRIGHTNESS_EVF3
+    RCP_PARAM_ND_INCREMENT_SIZE
+    RCP_PARAM_ZEBRA_1_PATTERN
+    RCP_PARAM_ZEBRA_2_PATTERN
+    RCP_PARAM_ZEBRA_1_COLOR
+    RCP_PARAM_ZEBRA_2_COLOR
+    RCP_PARAM_START_USER_CAL_MANUAL_CURRENT_INT_TIME
+    RCP_PARAM_START_USER_CAL_MANUAL_DEFAULT_INT_TIME
+    RCP_PARAM_START_USER_CAL_AUTO
+    RCP_PARAM_MONITOR_CONTROL_SCREEN
+    RCP_PARAM_RCP_CLIENT_LIST
+    RCP_PARAM_BWF_ENABLE
+    RCP_PARAM_BWF_VALID
+    RCP_PARAM_WSH_FOCUS_WHEEL
+    RCP_PARAM_SIDE_MODULE_LOCK_KEYS
+    RCP_PARAM_SIDE_MODULE_RECORD_KEY_LOCKABLE
+    RCP_PARAM_SIDE_MODULE_NAV_KEYS_LOCKABLE
+    RCP_PARAM_SHOW_KEY_ACTION_NOTIFICATIONS
+    RCP_PARAM_POWER_IN_LIST
+    RCP_PARAM_POWER_IN_PERCENT_0 - RCP_PARAM_POWER_IN_PERCENT_LAST
+    RCP_PARAM_POWER_IN_RUNTIME_0 - RCP_PARAM_POWER_IN_RUNTIME_LAST
+    RCP_PARAM_POWER_IN_VOLTAGE_0 - RCP_PARAM_POWER_IN_VOLTAGE_LAST
+    RCP_PARAM_POWER_IN_CURRENT_0 - RCP_PARAM_POWER_IN_CURRENT_LAST
+    RCP_PARAM_POWER_IN_PRESENT_0 - RCP_PARAM_POWER_IN_PRESENT_LAST
+    RCP_PARAM_POWER_OUT_LIST
+    RCP_PARAM_POWER_OUT_ENABLE_0 - RCP_PARAM_POWER_OUT_ENABLE_LAST
+    RCP_PARAM_POWER_OUT_STATUS_0 - RCP_PARAM_POWER_OUT_STATUS_LAST
+    RCP_PARAM_POWER_OUT_RESET_0 - RCP_PARAM_POWER_OUT_RESET_LAST
+    RCP_PARAM_POWER_OUT_CURRENT_0 - RCP_PARAM_POWER_OUT_CURRENT_LAST
+    RCP_PARAM_MONITOR_LIST
+    RCP_PARAM_SIDE_UI_NAME
+    RCP_PARAM_SENSOR_WIDTH_PHY
+    RCP_PARAM_SENSOR_HEIGHT_PHY
+    RCP_PARAM_SENSOR_DIMENSIONS_PHY
+    RCP_PARAM_FORMAT_WIDTH_PHY
+    RCP_PARAM_FORMAT_HEIGHT_PHY
+    RCP_PARAM_FORMAT_DIMENSIONS_PHY
+    RCP_PARAM_FORMAT_WIDTH_PIXELS
+    RCP_PARAM_FORMAT_HEIGHT_PIXELS
+    RCP_PARAM_FORMAT_DIMENSIONS_PIXELS
+    RCP_PARAM_RECORD_FORMAT_SPHERICAL
+    RCP_PARAM_RECORD_FORMAT_ANA_1_3
+    RCP_PARAM_RECORD_FORMAT_ANA_1_25
+    RCP_PARAM_RECORD_FORMAT_ANA_2
+    RCP_PARAM_RECORD_FORMAT_RESOLUTION
+    RCP_PARAM_RECORD_FORMAT_ASPECT_RATIO
+    RCP_PARAM_RECORD_FORMAT_ANAMORPHIC
+    RCP_PARAM_RECORD_FORMAT_LOOKAROUND
+    RCP_PARAM_SENSOR_NAME
+    RCP_PARAM_SHADOW_FORMAT_WIDTH_PHY
+    RCP_PARAM_SHADOW_FORMAT_HEIGHT_PHY
+    RCP_PARAM_SHADOW_FORMAT_DIMENSIONS_PHY
+    RCP_PARAM_SHADOW_FORMAT_WIDTH_PIXELS
+    RCP_PARAM_SHADOW_FORMAT_HEIGHT_PIXELS
+    RCP_PARAM_SHADOW_FORMAT_DIMENSIONS_PIXELS
+    RCP_PARAM_AMBIENT_CHANNEL
+    RCP_PARAM_KEY_MAPPING_ACTION_LIST
+    RCP_PARAM_DIALOG_LIST
+    RCP_PARAM_CAMERA_SCRIPT_LIST
+    RCP_PARAM_COLOR_SCIENCE
+    RCP_PARAM_IMAGE_PIPELINE_MODE
+    RCP_PARAM_SUPPORT_CONTACT
+    RCP_PARAM_CAMERA_CDL_LIST
+    RCP_PARAM_CAMERA_CDL_APPLY
+    RCP_PARAM_CAMERA_CDL_EXPORT_TO_MEDIA
+    RCP_PARAM_CAMERA_CDL_EXPORT_ALL_TO_MEDIA
+    RCP_PARAM_CAMERA_CDL_CREATE
+    RCP_PARAM_CAMERA_CDL_DELETE
+    RCP_PARAM_MEDIA_CDL_LIST
+    RCP_PARAM_MEDIA_CDL_IMPORT_TO_CAMERA
+    RCP_PARAM_MEDIA_CDL_IMPORT_ALL_TO_CAMERA
+    RCP_PARAM_SLATE_CAMERA_COLOR
+    RCP_PARAM_SIDE_UI_PAGE_USER_LEFT
+    RCP_PARAM_SIDE_UI_PAGE_AUDIO_LEFT
+    RCP_PARAM_SIDE_UI_PAGE_MONITOR_LEFT
+    RCP_PARAM_SIDE_UI_AUTO_HOME_LEFT
+    RCP_PARAM_SIDE_UI_AUTO_HOME_TIMEOUT_LEFT
+    RCP_PARAM_SIDE_UI_PAGE_USER_RIGHT
+    RCP_PARAM_SIDE_UI_PAGE_AUDIO_RIGHT
+    RCP_PARAM_SIDE_UI_PAGE_MONITOR_RIGHT
+    RCP_PARAM_SIDE_UI_AUTO_HOME_RIGHT
+    RCP_PARAM_SIDE_UI_AUTO_HOME_TIMEOUT_RIGHT
+    RCP_PARAM_MONITOR_MODE_REAR_UHDSDI1
+    RCP_PARAM_MONITOR_MODE_REAR_UHDSDI2
+    RCP_PARAM_MONITOR_FREQ_REAR_UHDSDI
+    RCP_PARAM_DISPLAY_PRESET_REAR_UHDSDI
+    RCP_PARAM_RETURN_FEED
+    RCP_PARAM_RETURN_FEED_STATE
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_LCD
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_HDMI
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_HDSDI
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_EVF
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_REAR_LCD
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_REAR_HDSDI1
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_REAR_HDSDI2
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_REAR_EVF
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_LCD3
+    RCP_PARAM_MONITOR_ALLOW_RETURN_FEED_EVF3
+    RCP_PARAM_OUTPUT_TRANSFORM
+    RCP_PARAM_DISPLAY_PRESET_LCD
+    RCP_PARAM_DISPLAY_PRESET_HDMI
+    RCP_PARAM_DISPLAY_PRESET_HDSDI
+    RCP_PARAM_DISPLAY_PRESET_EVF
+    RCP_PARAM_DISPLAY_PRESET_REAR_LCD
+    RCP_PARAM_DISPLAY_PRESET_REAR_HDSDI1
+    RCP_PARAM_DISPLAY_PRESET_REAR_HDSDI2
+    RCP_PARAM_DISPLAY_PRESET_REAR_EVF
+    RCP_PARAM_DISPLAY_PRESET_LCD3
+    RCP_PARAM_DISPLAY_PRESET_EVF3
+    RCP_PARAM_DEVELOPMENT_CONTRAST
+    RCP_PARAM_FLIP_MIRROR_FEED_0_1
+    RCP_PARAM_MIN_FRAME_PROCESSING_MODE
+    RCP_PARAM_MAX_FRAME_PROCESSING_MODE
+    RCP_PARAM_MIN_FRAME_PROCESSING_FRAME_COUNT
+    RCP_PARAM_MAX_FRAME_PROCESSING_FRAME_COUNT
+    RCP_PARAM_ROLL_OFF
+    RCP_PARAM_LOOKAROUND_AVAILABLE
+    RCP_PARAM_LOG_VIEW_MODE
+    RCP_PARAM_AUTO_FOCUS_PEAK
+* Added support for user metadata RCP messages
+    rcp_user_metadata_is_supported
+    rcp_user_metadata_register
+    rcp_user_metadata_unregister
+    rcp_user_metadata_send
+* Added new handle_user_metadata_cb callback
+* Added support for key mapping via RCP messages
+    rcp_key_mapping_is_supported
+    rcp_key_mapping_get_action_list
+    rcp_key_mapping_get_mapping
+    rcp_key_mapping_set_mapping
+* Added new menu tree node: RCP_MENU_NODE_TYPE_KEY_MAPPING_LEAF
+
+R.C.P. SDK v6.42.5 CHANGES
+* Added support for compressed c_list (C_LIST_STRING_TYPE_COMPRESSED) types
+
+R.C.P. SDK v6.42.4 CHANGES
+* Added parameters:
+    RCP_PARAM_AUDIO_CH3_MODE_STATUS
+    RCP_PARAM_AUDIO_CH4_MODE_STATUS
+    RCP_PARAM_RECORD_PRE_FRAME_COUNT_AVAILABLE
+    RCP_PARAM_RECORD_POST_FRAME_COUNT_AVAILABLE
+    RCP_PARAM_RECORD_PRE_FRAME_COUNT_ACTUAL
+    RCP_PARAM_RECORD_POST_FRAME_COUNT_ACTUAL
+
+R.C.P. SDK v6.41.5 CHANGES
+* Added parameters:
+    RCP_PARAM_WIFI_NETMASK
+    RCP_PARAM_WIFI_GATEWAY
+    RCP_PARAM_WIFI_DHCP_ENABLE
+    RCP_PARAM_AUDIO_CH1_MODE_STATUS
+    RCP_PARAM_AUDIO_CH2_MODE_STATUS
+
+R.C.P. SDK v6.40.13 CHANGES
+* Added support for user RCP messages (for communicating with 3rd party modules attached to the camera)
+    rcp_user_is_supported
+    rcp_user_send_set
+    rcp_user_send_get
+    rcp_user_send_current
+* Added has_display_str to rcp_param_properties_t
+* Added parameters:
+    RCP_PARAM_MEDIA_IS_PRESENT
+    RCP_PARAM_LENS_IMAGE_STABILIZATION_ENABLED
+    RCP_PARAM_LENS_CAPABILITIES
+    RCP_PARAM_PLAYBACK_FILE_FORMAT
+    RCP_PARAM_RECORD_VIDEO_MXF_CODEC
+    RCP_PARAM_MIN_RECORD_VIDEO_MXF_CODEC
+    RCP_PARAM_RECORD_VIDEO_MXF_CODEC_RESOLUTION
+    RCP_PARAM_RECORD_MXF_STATE
+    RCP_PARAM_RECORD_MXF_STATE_DETAILED
+    RCP_PARAM_MXF_WIDTH
+    RCP_PARAM_MXF_HEIGHT
+    RCP_PARAM_MXF_DIMENSION
+    RCP_PARAM_RECORD_VIDEO_MXF_COMPRESSION_ID
+    RCP_PARAM_PLAYBACK_FILE_FORMAT_TYPE
+    RCP_PARAM_OLPF_THIRD_PARTY_NAME
+    RCP_PARAM_OLPF_THIRD_PARTY_EMULATED_TYPE
+    RCP_PARAM_LENS_META_NAME
+    RCP_PARAM_LENS_META_SERIAL
+    RCP_PARAM_LENS_META_OWNER
+    RCP_PARAM_LENS_META_MANUFACTURER
+    RCP_PARAM_LENS_META_FLEN_MIN
+    RCP_PARAM_LENS_META_FLEN_MAX
+    RCP_PARAM_RECORD_R3D_METADATA_CURVE
+
+R.C.P. SDK v6.32.10 CHANGES
+* Fix potential bad read from memory when parsing histogram data
+* Frame limit is no longer available for any camera while in network mode.
+* Disable various look controls based on RAW and ACES modes
+
+
+R.C.P. SDK v6.32.7 CHANGES
+* Fixed typos/wording of comments
+* Fixed labels:
+* Fixed typo (from RCP_API_ENABLE_CACHEING to RCP_API_ENABLE_CACHING)
+* Fixed bug where 'is_hw_supported_valid' was not cleared when connecting to a camera
+* Fixed RCP_PARAM_HDR_FACTOR not updating on boot
+* Fixed bug in handling hardware capabilities for odler firmware
+
+
+R.C.P. SDK v6.32.4 CHANGES
+* Added parameters:
+    RCP_PARAM_SERIAL_2_PROTOCOL
+    RCP_PARAM_POWER_OUT_REAR_AUX_ENABLE
+    RCP_PARAM_POWER_OUT_REAR_AUX_STATUS
+    RCP_PARAM_POWER_OUT_REAR_AUX_RESET
+    RCP_PARAM_POWER_OUT_REAR_AUX_CURRENT
+    RCP_PARAM_POWER_OUT_TIMECODE_ENABLE
+    RCP_PARAM_POWER_OUT_TIMECODE_STATUS
+    RCP_PARAM_POWER_OUT_TIMECODE_RESET
+
+
+R.C.P. SDK v6.31.6 CHANGES
+* Bug Fixes
+* Added parameters:
+    RCP_PARAM_ZEBRA_1_MODE
+    RCP_PARAM_ZEBRA_1_STOPS_LOW
+    RCP_PARAM_ZEBRA_1_STOPS_HIGH
+    RCP_PARAM_ZEBRA_2_MODE
+    RCP_PARAM_ZEBRA_2_STOPS_LOW
+    RCP_PARAM_ZEBRA_2_STOPS_HIGH
+
+    
+R.C.P. SDK v6.30.16 CHANGES
+* Added file transfer API. This allows the transfer of presets, overlays, LUTs, thumbnails, log files, etc. to and from the camera.
+* Added parameters:
+    RCP_PARAM_MEDIA_FORMAT_FILE_SYSTEM
+    RCP_PARAM_WIPE_CAMERA
+    RCP_PARAM_PROXY_ENCODE_FRAMERATE
+    RCP_PARAM_CAMERA_CAL_LIST
+    RCP_PARAM_CAMERA_CAL_APPLY
+    RCP_PARAM_CAMERA_CAL_EXPORT_TO_MEDIA
+    RCP_PARAM_CAMERA_CAL_EXPORT_ALL_TO_MEDIA
+    RCP_PARAM_CAMERA_CAL_DELETE
+    RCP_PARAM_MEDIA_CAL_LIST
+    RCP_PARAM_MEDIA_CAL_APPLY
+    RCP_PARAM_MEDIA_CAL_IMPORT_TO_CAMERA
+    RCP_PARAM_MEDIA_CAL_IMPORT_ALL_TO_CAMERA
+    RCP_PARAM_PRORES_WIDTH
+    RCP_PARAM_PRORES_HEIGHT
+    RCP_PARAM_PRORES_DIMENSION
+    RCP_PARAM_OPEN_GATE_MODE
+    RCP_PARAM_OPEN_GATE_STATE
+    RCP_PARAM_RECORD_REDCODE_RAW_STATE_DETAILED
+    RCP_PARAM_RECORD_QUICKTIME_STATE_DETAILED
+    RCP_PARAM_WIFI_SCAN_SELECT
+
+    
+R.C.P. SDK v6.21.11 CHANGES
+* Minor bug fixes
+
+
+R.C.P. SDK v6.21.6 CHANGES
+* Added has_r3d and has_qt flags to extended_clipinfo_t
+* Fixed string for RCP_PARAM_PLAYBACK_METADATA_ISO
+
+
+R.C.P. SDK v6.21.4 CHANGES
+* Added support for REC. 709
+
+
+R.C.P. SDK v6.21.3 CHANGES
+* RCP_PARAM_RECORD_LIMIT_ENABLE and RCP_PARAM_RECORD_LIMIT_FRAMES are now enabled when RCP_PARAM_PRIMARY_STORAGE == PRIMARY_STORAGE_NETWORK.
+* Added more descriptive ProRes labels to RCP_PARAM_QUALITY
+
+
+R.C.P. SDK v6.20.23 CHANGES
+* Added required functions to be implemented by client code:
+    rcp_rand
+    rcp_timestamp
+* Added min_len and is_password fields to rcp_cur_str_edit_info_t
+* Added is_supported and is_supported_valid fields to rcp_menu_node_info_t
+* Added is_supported and is_supported_valid fields to rcp_cur_menu_node_status_cb_data_t
+* Added utility function rcp_menu_get_multi_action_list_leaf_flags
+* Added functions:
+    rcp_get_clip_list
+* Added 118 parameters
+
+
+R.C.P. SDK v6.10.28 CHANGES
+* Minor bug fixes
+* Fix numerous parameter dependencies
+
+
+R.C.P. SDK v6.10.25 CHANGES
+* Added 190 parameters
+* Added status for menu nodes 
+* Added RCP parameter dependencies
+* Added abbreviated display strings for parameters
+* Added functions to set a parameter's value with a relative offset from current value
+* Added RCP_ERROR_INTERNAL (see rcp_error_t)
+* Modified RCP_PARAM_FALSE_COLOR_MODE so that update_list_only_on_close flag is now false happen, and not just on closing list
+* Deprecated RCP_PARAM_LIST_SELECT_ISO (use rcp_set_list_relative with RCP_PARAM_ISO instead)
+* Deprecated RCP_PARAM_LIST_SELECT_SHUTTER (use rcp_set_list_relative with RCP_PARAM_EXPOSURE_DISPLAY instead)
+
+
+R.C.P. SDK v6.0.45 CHANGES
+* Modified RCP_PARAM_FALSE_COLOR_MODE so that update_list_only_on_close flag is now false
+* Fixed status of timecode settings so they are disabled during record
+* Fixed bug that would invalidate a cached list if it was empty
+
+
+R.C.P. SDK v6.0.36 CHANGES
+* Added dependencies between audio CH1/2 source CH3/4 source
+* Added dependencies between audio CH1/2/3/4 source and its mode
+* Fixed histogram label when ACES Proxy is enabled.
+* Fixed status of RCP_PARAM_RECORD_HDR_MODE and RCP_PARAM_HDR_FACTOR so they are disabled while in record.
+* Fixed name of RCP_PARAM_RTC_DATE_TIME
+
+
+R.C.P. SDK v6.0.29 CHANGES
+* Refactored source code into multiple source files
+* Added rcp_api_config.h to allow customization of API
+* Added over 230 new parameters (see rcp_param_t for details)
+* Added Notification support:
+    rcp_notification_get
+    rcp_notification_timeout
+    rcp_notification_response
+* Added support for Menu Tree
+    rcp_menu_is_supported
+    rcp_menu_get_children
+* Added connection statistics (see rcp_camera_connection_stats)
+* Added ability to get the status of any parameter (see rcp_get_status and rcp_cur_status_cb_data_t)
+* Added ability to set list on allowed parameters (see rcp_set_list)
+* Added parameter properties (returned from rcp_get_is_supported)
+* Added edit info to current data callbacks. This provides information required to allow the user to manually enter values for parameters (like min value, max value, divider, etc.)
+* Added the following fields to the current list callback:
+    send_int
+    send_uint
+    send_str
+    update_list_only_on_close
+* Added rcp_interface field to rcp_cam_info_t
+* Moved ip_address field from rcp_cam_info_t to rcp_discovery_cam_info_list_t
+* Renamed rcp_cam_info_list_t to rcp_discovery_cam_info_list_t
+* Added new error code RCP_ERROR_NOT_SUPPORTED
+* Added new parameter status color RCP_PARAM_DISPLAY_STATUS_WARNING2
+* Added new callbacks per connection:
+    cur_status_cb: changes to status of a parameter (see rcp_cur_status_cb_t)
+    notification_cb: notifications from camera (see rcp_notification_cb_t)
+    cur_audio_vu_cb: data to display audio VU meters (see rcp_cur_audio_vu_cb_t)
+    cur_menu_cb: data to display menu tree (see rcp_cur_menu_cb_t)
+* Deprecated rcp_get_update_list_only_on_close
+* Changes that break backwards compatibility with 5.1.x:
+    1. UDP discovery process
+       a. The client must provide the IP address to the API in a new argument of rcp_discovery_process_data.
+       b. The struct rcp_cam_info_list_t has been renamed to rcp_discovery_cam_info_list_t.
+       c. The ip_address field of rcp_cam_info_t has been moved to rcp_discovery_cam_info_list_t.
+       d. New callbacks required in rcp_camera_connection_info_t (set to NULL if they won't be used).
+       e. New argument in rcp_get_is_supported that returns the properties of the provided parameter (pass in NULL if these properties are not required).
+
+       
+R.C.P. SDK v5.1.5 CHANGES
+* Enhanced startup performance
+* Added the following parameters:
+    RCP_PARAM_HAND_CONTROLLER_FOCUS_POS (HCFOCUS)
+    RCP_PARAM_HAND_CONTROLLER_IRIS_POS (HCIRIS)
+    RCP_PARAM_HAND_CONTROLLER_ZOOM_POS (HCZOOM)
+    RCP_PARAM_HAND_CONTROLLER_REINIT (HCREINIT)
+* Added the following functions:
+    rcp_api_get_version
+    rcp_get_is_supported
+    rcp_send
+    rcp_set_uint
+
+
+R.C.P. SDK v5.0.6 CHANGES
+* Initial release
+
+
+OPERATIONAL NOTES SPECIFIC TO BUILD v6.62.0
+* v6.0.36 UDP Discovery process is not backwards compatible with v5.1.x. Refer to the change list for details.
+* Parameter status should be used to disable controls dynamically based on other camera settings. The application does not need to know the logic of when a parameter should be disabled as the API will push the status to the application when appropriate.
+* Notifications can now be displayed on the application and provide feedback to the camera. Only a subset of all notifications that are generated by the camera are pushed to external controllers.
+* Menu tree support allows a generic way for the application to show the menu tree of the connected camera. It works by providing a list of children under a specified node (starting at a ROOT node). Each entry in the list provides the information required to show the final "leaf" node such as the parameter ID and leaf type (list, text entry, etc).
+
+
+KNOWN ISSUES
+* None
+
+
+Copyright (c) 2004-2019 RED.COM, LLC. All Rights Reserved.

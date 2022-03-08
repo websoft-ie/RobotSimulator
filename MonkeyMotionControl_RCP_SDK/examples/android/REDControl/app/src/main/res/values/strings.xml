@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RED Control</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_connect">Disconnect</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="title_activity_controller">Controls</string>
+    <string name="saturation_bar_text">Saturation</string>
+    <string name="contrast_bar_text">Contrast</string>
+    <string name="brightness_bar_text">Brightness</string>
+    <string name="exposure_bar_text">Exposure</string>
+    <string name="red_bar_text">Red</string>
+    <string name="green_bar_text">Green</string>
+    <string name="blue_bar_text">Blue</string>
+    <string name="flut_bar_text">FLUT</string>
+    <string name="shadow_bar_text">Shadow</string>
+    <string name="action_control">Controls</string>
+    <string name="title_activity_connect">Connect</string>
+    <string name="rec_button_text">RECORD</string>
+    <string name="snapshot_button_text">SNAPSHOT</string>
+    <string name="title_activity_main">Main</string>
+    <string name="histogram_label">Histogram Label</string>
+    <string name="slate_label">SLATE</string>
+    <string name="slate_scene_hint">Slate scene</string>
+    <string name="tab_label_home">Home</string>
+    <string name="tab_label_media">Media</string>
+    <string name="tab_label_menu">Menu</string>
+    <string name="connect_button_text">Connect</string>
+    <string name="cameraIpEditTextHint">Enter camera IP address</string>
+    <string name="title_activity_camera_info">Camera Info</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_test">Test</string>
+    <string name="timecode_default_text">HH:MM:SS:FF</string>
+	<string name="spinner_param_text">SPINNER PARAM</string>
+    <string name="slider_param_text">SLIDER PARAM</string>
+    <string name="media_default_string">XX%</string>
+    <string name="media_label">LABEL</string>
+	<string name="text_menu_tree_button_back">Back</string>
+	<string name="text_menu_tree_button_close">Close</string>
+		
+</resources>

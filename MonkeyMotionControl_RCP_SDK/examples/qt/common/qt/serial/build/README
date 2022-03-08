@@ -1,0 +1,29 @@
+The Qt Serial library should be built with Qt 4.7.3
+
+
+=====================
+MAC OS X INSTRUCTIONS
+=====================
+To build the Qt Serial library on Mac, run build.sh within this directory (bash build.sh).
+If any changes need to be made to the makefile, halt the script after the 'qmake' call, which will create a makefile. Once any modifications are made, execute 'make -w' to build the library.
+
+
+====================
+WINDOWS INSTRUCTIONS
+====================
+To build the Qt Serial library on Windows, perform the following steps:
+	1) Unzip QtSerial.tar.gz
+	2) Make a folder called 'build' in qt-qtserialport/src
+	3) Make a folder called 'QtSerialPort' in qt-qtserialport/src/serialport
+	4) Move qt-qtserialport/src/serialport/qserialportglobal.h to qt-qtserialport/src/serialport/QtSerialPort
+	5) Move qt-qtserialport/src/serialport/qt4support/include/private to qt-qtserialport/src/serialport
+	6) Move qt-qtserialport/src/serialport/qt4support/include/QtCore to qt-qtserialport/src/serialport
+		-By this step, qt-qtserialport/src/serialport should have the following directories: doc, private, qt4support, QtCore, QtSerialPort
+	7) Open serialport.pro in Qt Creator
+	8) Point the build directory to the 'build' folder created earlier (qt-qtserialport/src/build) for both debug and release
+	9) Switch the build type to 'Release'
+	10*) Do a 'Build All' (Build > Build All (Ctrl + Shift + B))
+	11) qt-qtserialport/src/build/release contains QtSerialPort.dll
+	
+	*If any configuration changes need to be made (i.e. architecture, build type, etc.), then instead of doing 'Build All', go to Build > Run qmake.
+	At that point, a Makefile will be generated in qt-qtserialport/src/build and any additional configuration before running 'make' can be done there.

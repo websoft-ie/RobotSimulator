@@ -1,0 +1,275 @@
+﻿TODO
+
+### Add motion checking thread inMotion monitor for waiting moveEnd critical program sequences
+POST Rehearse Enable RUN Button -> RUN Button Enabled linked to rehearsed Property
+# Fix CameraLink changed from combobox not changing
+
++ VAL3 Add RVel TVel mDesc Setting VAL3 on MoveL MoveC ?
+# VAL3 fix setMonitorSpeed() for increasing speed.
+# VAL3 Task Stop Motion 
+    -> Receiver thread separate to other threads -> can receive stop instructions / interruptions
+
++ ROBOT Moving DP and event to mark stop and moving
++ Timeline lock Post-Rehearse (Cannot Add / Remove Keyframes)
+
++ Overlay Video Screenshot for Positioning Reference.
+# BUG -> Table current KF position tracking and reset if moved -> To remove Navigation wrong instructions or not moving in sequence
+
+# Simulator on first mouse right drag (camera rotation) -> camera view jumps -> set / refresh current view paramenters. 
+# BUG TRACKING Aim Target Move Wrong Direction when target on the side Left and Right?
++ MAKE Checklist Mode 1 and Mode 2
+
+
++ Run Move Messagebox button GO -> Decorate Larger and Danger or RED Box
+
+# TRT get focus motor current position, for initial interface sync.
+
++ Table Commands SHIFT X,Y,Z Function.
++ Return to START -> Reverse sync motion graph Focus.
++ Commands Mode Save Both Graph and Table.
++ Table Commands Merge 2 Files.
++ Table Commands Study Delete Between Moves -> Circular become Linear.
++ Live Controls change working mode to MoveJ(Joints)
++ Live Controls Add Limit Check and Singularity Check -> Stop sending command that is out of range.
++ Circular / Linear Move Reverse path after Execute
++ Simulator Extend Bezier Points to include PIP Axis Vector and PrismReferenceVisual
++ Pre-Run Thread -> for delayed actions like RED Camera Trigger -> Pre-Run then Run + Sync => Post Run Sync.
+
+* After rehearse motion graph do not reset all tracks, reset only focus track ???
+* Commands Mode Sequence Speed Setting
+# BUG Fix: Commands Table after edit -> set iseditedflag, then navigate will not use MoveC only only MoveL
+# Auto-save (default 5 mins, modifiable) Commands Table -> Separate 2 folders, Autosave files folder and User save files folder.
+* Timeline graph handles -> profile? horizontal to keyframe or current smooth 
+$ BUG Camera Front ViewPrism and CameraPoint PIP direction SYNC and NO-SYNC.
+$ BUG Commands Mode -> Front Camera -> Multiple rotation on Flange cartesian radian simplification problem (skips full circle and reduce to small angle movement) -180 <> 180
+# Post Rehearse and Run FocusLink Setting Bug.
+### Change Commands Table Cartesian to Joints or FIX Multi-rotation moves 
+### Post HelixToolkit version update BoundingBox not rendering.
+# BUG Close: OnClose TRT/TCU close/disconnect/quit program thread exception.
+
++++ VAL3 Live Move thread -> add check Joints Rotation range and change pose large movements. 
+        -> use config to shoulder, elbow, wrist -> ssame so shoulder config is not changed
+        -> pointToJoint -> check for pPosition same configuration
+
++ Line AC to Circle ABC -> Add B point convert to MoveC
+# BUG Live tracking -> Simulator Camera View does not update when Pan L/R, Rotate L/R. 
+    -> FIX Rotate L/R update camera2 Up direction wrt to PIP
+    -> FIX Pan L/R update camera2 direction -> check currently working Tilt U/D
+        
+# Live move mode tracking UI Changes
+    -> Controls UI change BG to a Plane and change arrows to XYZ axis.
+    -> Add controls for move CLOSER and AWAY from target, if add then add to UI PIP axis arrows. 
+    -> current arrows FW / BW switch to CLOSER / AWAY 
+    -> FW / BW duplicate current UP / DOWN arrows and place beside 
+* Change Sequence Run Message box: Continue to countdown -> Ready to RUN (GO) (CANCEL) larger buttons.
+
+
+# HARDWARE Bottom Camera Mount Make new Shorter Plate.
+# HARDWARE Cable Hidding Step / Bump Yellow-Black.
+
+
+
+====================================================================================================
+
+
+
+### PHANTOM
+* Phantom Auto-partition function
+* Phantom partition switch from Playback Cine to Preview Cine not working
+* PhantomCamera_IncrementProjectTake add to post sync when AutoSaveFootage property true.
+    - Auto-Save prompt show saving progress status and details like filename, percentage, etc.
+* Phantom fix playback button behaviour bugs
+* Phantom CineSavedFlag updating after Capture, Partition, Refresh
+* Phantom add 16x playback speed
+* Phantom ADD Exposure Combined setting like in Phantom Program.
+- Phantom automation settings: Auto Transfer file after stop or after detect switch to another Cine.
+- General Settings: Camera Trigger -> Select Camera Type.
+
+
+### ROBOT CONTROLLER
+* VAL3 Screen Add Go to Home key.
+* FIX VAL Restart, Reset, Stop programs
+* FIX RobotController disconnection detection.
++ VAL3 Smooth Last Point Velocity/Acc/Dec for MotionControl processing program.
++ ADD Smoothness settings defaults.
++ VAL3 Outputs Task -> Separate from robot motion execution, now robot moving blocks output triggering (Vice-versa).
+* VAL3 Time Stamp system (TIME ACCURACY FIX)
+	- ACK timestamps
+	- Program Side use timestamps to calculate elapsed time, total time
+	- ACK for command start time
+	- ACK timestamp for each MoveID completion (whole number, eg. <3.0> ~ 3.5 ~ <4.0>)
+
+
+### SIMULATOR
+## BUG Add Bezier point after calculate -> not adding / updating properly -> whole bezier updating function breaks.
+# BUG FIX SIM View Prism rotation when phantom mounted on side.
+# BUG CALCULATE TargetPath not reaching last 2 points.
+# FIX Simulator Open and Save -> Open file does not reapply control points.
+# BUG ARC adjustment point.
+# DELETE point need to call renameLbl to update the labels.
+# DELETE inconsistency some points get removed or disappeared and not synced graphics with data.
+# Playback: fix errors with Player Control (Step FW, Step BW, GoEnd, GoStart).
+# BUG CAMERA Default Home and Start Up Position JUMP when manipulate PAN and ROTATE using mouse.
+# BUG ControlPoints hide then show crash.
+# BUG Target Path HitTest null exception crash.
+- CAMERA VIEW perspective viewport continue work.
+- Playback trackbar implement drag tracking and updating.
+- Convert camera 3D replacement function for FRONT and BOTTOM camera switching.
+* Playback: link/sync actions for Point Data Navigation buttons and Player Control Step FW/BW and GoEnd/GoStart buttons 
++ ADD robot base mount Z offset.
++ SIM Sync Robot Live Movement
++ ViewPrism transparent color.
++ Merge CameraManipulator3D to PointManipulator3D, Create new class CameraManipulator3D extension from the new PointManipulator3D
+++ Create and Move Motion path and Target paths or future Additional Paths to standarized new MotionPath Class.
++ Display PrismRefPoint current focus distance 3D billboard.
++ Zoom link to ViewPrism front viewport rectangle resize/scale to lens spec view angle transform.
+
+
+### STREAMING & COMMANDS
+# BUG STREAM RUN MOVE: Does not reach last point.
+# BUG AIM TARGET From Home Center/Straightline lower bottom position not working. (Singularity?)
++ Commands Table -> Select 3 continuous adjacent Linear Moves -> button Convert to Circular Move. 
++ COMMANDS Edit Mode -> Implement edit method for Start entry.
+* COMMANDS ADD Linear/Circular Move -> Point B Set/Blinking Red for pending SET reminder.
+* Commands sequence function: Add Linear / Circular == ADD >>> point + segment / arc in simulator.
+* Stream Start -> go to start position following reverse sequence.
++ Move Commands and Stream Tabs into new UserControls -> eg. Linear Move, Circular Move.
+- Stream and Commands Table style fix for onLostFocus foreground text color is black -> change to orange?.
++ FOCUS CALCULATOR: Link Simulator CalculateFocusDistance >>> Sequence / MoveID <<< ToolController position updater.
+	- A to B values interpolator, calcfocus(0-0.50)
++ FOCUS SEQUENCE GENERATOR: Calculate focus sequence stream values between Point A, B, C using simulator.
+* REHEARSE Generate FIZ stream based on 3D sim tracking Focus distance values.
+% STREAM RUN TUNING: INTERVAL=40 VEL=100 ACC=30 DEC=100 LV=400 RC=400
+
+
+### RANGEFINDER 
+- Bug hangs Main UI when connected -> Action that pop up MessageBox.
+	- Case 1: Click on Go Home button.
+
+
+### MOTION GRAPH
++ After REHEARSE / Generate focus curve -> using focus distance point data to shape the focus curve in the motion graph (interpolate?) 
+OK - Timeline Add/First/Last keyframe link handles add behaviour to make Link handles horizontal.
+- Keyframe Editing: Add button for copy and set current selected keyframe focus position.
++ MOTION GRAPH SETTINGS: 
+	-> ADD DP for Triggers Target (Robot / EtherCAT / Trigger Box)
+		-> Fixed Trigger Tracks (Camera, Trigger 1-8)
+		-> Variable add trigger tracks according to selected target controller.
+	-> ADD DP for Motion Control Target (EtherCAT / OpenCAN / Motion Box / DragonFrame) 
+		-> Fixed Cubic Tracks (Focus, Iris, Zoom, Aux)
+		-> Variable add cubic/linear tracks according to selected target controller.
+OK TEST NEEDED --> BUG TEMPORATY FIXED - Focus Jump -> Timeline Navigate sync when reach keyframe point, focus value goes to 0. 
+    BUG TRACED @ Timeline_OutputFIZ(double time)  
+    //00:00:01:59:433 > Timeline OutputFIZ t = 1.1748651 => focus = -23958.1804542793
+    //00:00:01:59:447 > Timeline OutputFIZ t = 1.17540565 => focus = -23955.1577227329
+    //00:00:01:59:470 > Timeline OutputFIZ t = 1.1759462 => focus = 0
+
+### LIVE CONTROLS 
+* FINE TUNE: Motion smoothing. 
+# BUG AIM TARGET From Home Center/Straightline lower bottom position not working. (Singularity?)
++ ADD Point Navigation -> adjust and save edited position to current point (ONLY POINTS ADJUSTMENT disregarding if curve or line).
++ TARGET TRACKING: Applies rotation adjustments when moving in live direction. Calculate the tilt/pan value of the robot.
+	+ ENABLED -> Disables 3D Controls for Pan & Tilt -> Sync Simulator CalculateRotation. 
+		+ X/Y axis Perpendicular PIP vector calculation for moving on the general xy axis direction
+	+ Update Live Control Thread to send complete Joint position updates (New VAL3 function for Small increments MoveJ).
+- Button graphics make bigger for easier click / mouseEnter.
+- Gamepad Connect Bug.
+
+
+### TOOLCONTROLLER 
+- BUG: Lens Profile XML repeated Position Value cause OOR/NAN error when click position step buttons => Fix: Check for repeat Position Value
+# Track Target Out of Focus -> Check camera point or lens offset is correct.
+++ LENS DEADBAND CALCULATOR / CALIBRATION function:
+	Moves focus one direction in intervals and records distance + positon, and the adjusted lens position value.
+	FLOW: 	1 Move to all n interval Positions -> Record Mark
+		2 From last point move in reverse order, Adjust to correct focus -> Record Mark
+		3 Repeat for n intervals until reach beginning.
+		4 Calculate position Deadband/Backlash.
+	DEADBAND tuning / adjustment (OnTRTM1PositionChanged).
+* LINK + TARGET TRACKING control behaviour. 
+	-> Link Simulator and Target Tracking ON: Do nothing, Simulator will update target distance automatically.
+	-> Link Simulator and Target Tracking OFF: use Simulator Camera to Target distance stream (new Focus Distance sequence generator).
+	-> Link Motion Graph: Check and turn off Target Tracking OFF, use Motion Graph for Position Stream.
+- SAVE LAST POSITION on exit. Restore position on open.
+- Add Teradek Motor Response Setting Commands. 
+- AUTO-CALIBRATE Lens after Lens Profile change.
+++ AUTO LENS PROFILER
+	- SOLUTION 1 LASER RANGE FINDER distance input 
+		- Calculate distance: pythagorean theorem / right angle triangle 
+			> Edge A (Unknown) distance from sensor center to target. 
+			> Edge B (Constant) is height from center of sensor perpendicular to A.
+			> Edge C (variable) is measured distance from Laser Range Finder.
+			= Return value of A
+	- SOLUTION 2 MANUAL Profiling
+		- Routine:
+			- Select close and far distance range to measure (closest and farthest points).
+			- Move to each distance position
+			- Adjust focus
+			- Click Confirm -> Records Distance + Position into the Profile Table.
+			- Move to next.
+			- Repeat until end of range.
+
+
+### NEW FEATURES
+* Custom Dialog and Messageboxes add focus/selected action for ease of access/keyboard navigation and confirmation.
+- System Status: add Voltage and Amp readings for Camera and Power Outputs.
+* CHANGE all timers to System.Threading.Timer (Simulator)
+	https://stackoverflow.com/questions/10317088/why-there-are-5-versions-of-timer-classes-in-net
+* CHANGE implement all properties for events and dependency properties
+
+
+
+WORKFLOW MODE 2 - COMMANDS MODE
+1 Connect Robot and Enable Robot.
+2 Connect Lens Motor and Select Lens Profile.
+	2a Set Phantom Resolution and Frame Rate (Default 1 partition, to calculate total frames available)
+3 Focus and set target point.
+	3a Auto Enable AutoFocus after setting target point ?
+4 Start Planning Commands Sequence
+	4a Open File 
+		4a-1 Load Commands Table 
+		4a-2 Load Simulator Keyframe Points
+		4b-3 Load Timeline Keyframes (todo file open, save, adjust duration)
+	4b Move robot and Set Start Point
+5 Add Keyframe Point
+	5a Add linear point
+	5b-1 Add circular mid point
+	5b-2 Add circular end point
+8 Set sequence speed 
+	8-1 Apply speed to all rows (check predefined motion smoothing presets)
+9 Rehearse Sequence
+	9-1 Go to Start
+	9-2 Rehearse Countdown and Execute Rehearse
+	9-3 Export Focus keyframes and adjust Timeline total time
+	9-4 Return to start via reverse path
+	9-5 Phantom camera auto partition by total time  
+10 Navigate and adjust focus keyframe curves
+11 Run sequence 
+	11-1 Go to Start 
+	11-2 Call PanthomRecordNextCine()
+	11-3 Run Countdown and Execute Run
+	11-4 Post run actions
+		11-4-1 Phantom Playback and/or auto-save
+	11-5 Return to start via reserse path
+
+
+
+
+
+
+==================================================
+Tool Control Unit = 773 g
+Cables Bundle (RED) = 350 g
+=========
+Camera Mount (Under) Plate + Cylinder = 1750 g 
+=========
+RED RAVEN + DSMC2 V-Lock Expander = 2000 g
+Tokina 100mm Macro Cine Lens = 1300 g 
+SmallRig Base Plate = 280 g
+1x Medium Rods = 56 g
+Teradek MotorX = 252 g
+HDMI to SDI Converter = 175 g
+======== TOTAL = 4063 g
+TOOL TOTAL = 4063 + 1750 = 5813 g
+==================================================
+
